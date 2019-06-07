@@ -1,0 +1,20 @@
+Tile
+	Sea
+	Desert
+	mountain
+	
+Resource
+	Gold 	(Default: 500)		Rate: 10 unit/min	
+	Wood 	(Default: 1000)		Rate: 05 unit/min
+	Food 	(Default: 600)		Rate: 03 unit/min
+
+Building
+	Castle
+	Workshop
+	Barracks
+	
+Humens
+	Archer
+	Swordsman
+	Worker Busy
+	Worker Free
