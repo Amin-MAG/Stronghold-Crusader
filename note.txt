@@ -8,8 +8,8 @@ Resource
 	Wood 	(Default: 1000)		Rate: 05 unit/min
 	Food 	(Default: 600)		Rate: 03 unit/min
 
-Building
-	Castle
+Building.Building
+	Building.Castle
 	Workshop
 	Barracks
 	

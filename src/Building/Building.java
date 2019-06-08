@@ -1,3 +1,5 @@
+package Building;
+
 import java.util.HashMap;
 
 
@@ -11,11 +13,14 @@ public abstract class Building {
 
     final static String jsonBuildingSettingAddress = "JsonFiles/building_settings.json";
 
+    String buildingName;
     public int buildingLevel;
     public Object resourceChanges;
     public int buildingInitialHealth;
 
     Building(String name) {
+
+        buildingName = name;
 
         JSONParser parser = new JSONParser();
 
@@ -29,6 +34,13 @@ public abstract class Building {
 
 
             // Here We Assign Values !!!
+            /*
+
+            public int buildingLevel;
+            public Object resourceChanges;
+            public int buildingInitialHealth;
+
+             */
 
 //            buildingLevel = 1;
 //            resourceChanges = buildingInfo.get("resource_changes");

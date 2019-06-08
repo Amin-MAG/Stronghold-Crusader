@@ -1,8 +1,12 @@
+import Building.Building;
+import Human.Human;
+import Human.Swordsman;
+
 public class Main {
 
     public static void main(String[] args) {
 
-        Building amin = new Castle();
+//        Human amin = new Swordsman();
 
     }
 
