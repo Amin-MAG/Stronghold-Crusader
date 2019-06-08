@@ -2,9 +2,9 @@ package Building;
 
 public class Castle extends Building{
 
-    Castle(){
+    Castle(int[] size, int[] location){
 
-        super("castle");
+        super("castle", size, location);
 
     }
 

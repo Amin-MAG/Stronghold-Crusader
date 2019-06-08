@@ -2,6 +2,7 @@
 
   "castle":
   {
+    "size": [10, 10] ,
     "building_initial_health":
     {
       "1": 10,

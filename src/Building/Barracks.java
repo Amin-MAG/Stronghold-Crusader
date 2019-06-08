@@ -2,9 +2,9 @@ package Building;
 
 public class Barracks extends Building {
 
-    Barracks() {
+    Barracks(int[] size, int[] location) {
 
-        super("barracks");
+        super("barracks", size, location);
 
     }
 

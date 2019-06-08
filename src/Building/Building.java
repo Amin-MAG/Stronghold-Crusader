@@ -1,8 +1,5 @@
 package Building;
 
-import java.util.HashMap;
-
-
 import java.io.FileReader;
 import java.util.Map;
 
@@ -14,13 +11,19 @@ public abstract class Building {
     final static String jsonBuildingSettingAddress = "JsonFiles/building_settings.json";
 
     String buildingName;
+
     public int buildingLevel;
     public Object resourceChanges;
     public int buildingInitialHealth;
 
-    Building(String name) {
+    public int[] size;
+    public int[] location;
+
+    Building(String name, int[] size, int[] location) {
 
         buildingName = name;
+        this.size = size;
+        this.location = location;
 
         JSONParser parser = new JSONParser();
 

@@ -2,9 +2,9 @@ package Building;
 
 public class Workshop extends Building {
 
-    Workshop() {
+    Workshop(int[] size, int[] location) {
 
-        super("workshop");
+        super("workshop", size, location);
 
     }
 
