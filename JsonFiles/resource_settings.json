@@ -1,0 +1,17 @@
+{
+  "images": {
+    "GUI-BACKGROUND": "\\Assets\\img\\menu_image.jpg",
+    "GUI-CREATE_SERVER": "\\Assets\\img\\btn\\server_btn.jpg",
+    "GUI-CREATE_SERVER_HOVER": "\\Assets\\img\\btn\\server_btnH.jpg",
+    "GUI-JOIN": "\\Assets\\img\\btn\\join_btn.jpg",
+    "GUI-JOIN_HOVER": "\\Assets\\img\\btn\\join_btnH.jpg",
+    "GUI-ABOUT": "\\Assets\\img\\btn\\about_game_btn.jpg",
+    "GUI-ABOUT_HOVER": "\\Assets\\img\\btn\\about_game_btnH.jpg",
+    "GUI-EXIT": "\\Assets\\img\\btn\\exit_btn.jpg",
+    "GUI-EXIT_HOVER": "\\Assets\\img\\btn\\exit_btnH.jpg"
+  },
+  "sounds": {
+    "GUI-Music": "\\Assets\\soundtrack\\02 - A Strong Spice.mp3",
+    "GUI-HOVER_BTN": "\\Assets\\soundtrack\\swordhit.mp3"
+  }
+}

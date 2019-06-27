@@ -1,5 +1,4 @@
 {
-
   "name": "test map",
   "board": [
     "wwwwwwwwwww",
@@ -16,10 +15,7 @@
   ],
   "number_of_players": 2,
   "player_locations": [
-
-            [10, 10],
-            [20, 20]
-
-          ]
-
+    [10, 10],
+    [20, 20]
+  ]
 }

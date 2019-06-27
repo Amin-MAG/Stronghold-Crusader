@@ -1,21 +1,12 @@
 {
-
-  "initial_resources":
-  {
-
+  "initial_resources": {
     "gold": 500,
     "food": 600,
     "wood": 1000
-
   },
-
-  "initial_resource_rate":
-  {
-
+  "initial_resource_rate": {
     "gold": 10,
-    "food": -3 ,
+    "food": -3,
     "wood": -5
-
   }
-
 }

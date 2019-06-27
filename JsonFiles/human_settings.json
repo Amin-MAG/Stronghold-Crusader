@@ -1,39 +1,22 @@
 {
-
-  "busy_worker":
-  {
-
-    "food_cost": -1 ,
+  "busy_worker": {
+    "food_cost": -1,
     "human_initial_health": 100
-
   },
-
-  "free_worker":
-  {
-
-    "food_cost": -2 ,
+  "free_worker": {
+    "food_cost": -2,
     "human_initial_health": 100
-
   },
-
-  "archer":
-  {
-
-    "food_cost": -7 ,
-    "human_initial_health": 200 ,
-    "health_rate": -6 ,
+  "archer": {
+    "food_cost": -7,
+    "human_initial_health": 200,
+    "health_rate": -6,
     "max_distance_for_attack": 1
-
   },
-
-  "swordsman":
-  {
-
-    "food_cost": -4 ,
-    "human_initial_health": 250 ,
-    "health_rate": -2 ,
+  "swordsman": {
+    "food_cost": -4,
+    "human_initial_health": 250,
+    "health_rate": -2,
     "max_distance_for_attack": 1
-
   }
-
 }
