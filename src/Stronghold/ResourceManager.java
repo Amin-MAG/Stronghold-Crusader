@@ -16,7 +16,7 @@ import org.json.simple.parser.JSONParser;
 
 public class ResourceManager{
 
-    final static String gameAddress = Paths.get("").toAbsolutePath().toString();
+    public final static String gameAddress = Paths.get("").toAbsolutePath().toString();
     private final static String jsonResourseSettingAddress = "JsonFiles/resource_settings.json";
 
     private static HashMap<String, Image> IMAGES = new HashMap<>();
@@ -48,6 +48,8 @@ public class ResourceManager{
 
             }
 
+//            System.out.println(RESOURCES);
+
             // Sounds
 
             RESOURCES  = (Map) jsonObject.get("sounds");
@@ -72,6 +74,7 @@ public class ResourceManager{
         return IMAGES.get(name);
 
     }
+
 
 
     public static BackgroundImage getBackgroundImage(String name) {

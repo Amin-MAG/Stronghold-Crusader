@@ -1,10 +1,12 @@
-package Building;
+package Stronghold.Building;
 
 public class Barracks extends Building {
 
-    Barracks(int[] size, int[] location) {
+    public final static String buildingImageName = "BUILDING-BARRACKS";
 
-        super("barracks", size, location);
+    public Barracks(int[] location, String owner) {
+
+        super("barracks", location, owner, buildingImageName);
 
     }
 

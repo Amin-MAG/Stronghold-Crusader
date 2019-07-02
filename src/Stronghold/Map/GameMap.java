@@ -1,8 +1,8 @@
-package Map;
+package Stronghold.Map;
 
 import java.io.FileReader;
 
-import Map.Tile.Tile;
+import Stronghold.Map.Tile.Tile;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;

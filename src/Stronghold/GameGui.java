@@ -9,14 +9,8 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.layout.*;
 import javafx.scene.media.AudioClip;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
 import javafx.scene.input.MouseEvent;
-
-import java.io.File;
-import java.nio.file.Paths;
 
 
 public class GameGui extends Application {
@@ -28,18 +22,35 @@ public class GameGui extends Application {
     @Override
     public void start(Stage primaryStage) {
 
+
         ResourceManager.initialization();
+
+        primaryStage.setAlwaysOnTop(true);
+
+        AudioClip theMenuMusic = ResourceManager.getSound("GUI-Music");
 
         MainMenuButton btnCreateServer = new MainMenuButton("GUI-CREATE_SERVER");
         MainMenuButton btnJoin = new MainMenuButton("GUI-JOIN");
         MainMenuButton btnAbout = new MainMenuButton("GUI-ABOUT");
         MainMenuButton btnExit = new MainMenuButton("GUI-EXIT");
 
+        btnJoin.addEventHandler(MouseEvent.MOUSE_CLICKED,
+                new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent event) {
+
+                        Game myGame = new Game();
+                        theMenuMusic.stop();
+                        myGame.render(primaryStage);
+
+                    }
+                });
+
         btnExit.addEventHandler(MouseEvent.MOUSE_CLICKED,
                 new EventHandler<MouseEvent>() {
                     @Override
                     public void handle(MouseEvent event) {
-                        System.exit(0);
+                        primaryStage.close();
                     }
                 });
 
@@ -63,34 +74,25 @@ public class GameGui extends Application {
 
         mainBox.setBackground(ResourceManager.getBackground("GUI-BACKGROUND"));
 
-
-//        Canvas menuPage = new Canvas(Stronghold.screenSize.width, Stronghold.screenSize.height);
-//        guiRoot.getChildren().add(menuPage);
-//
-//        GraphicsContext gcPage = menuPage.getGraphicsContext2D();
-//
         new AnimationTimer() {
             @Override
             public void handle(long now) {
-//
-//                gcPage.setFill(new Color(0,0,0,1));
-//                gcPage.fillRect(0,0,Stronghold.screenSize.width, Stronghold.screenSize.width);
-//
+
                 primaryStage.setFullScreen(true);
 
             }
         }.start();
 
 
-        ResourceManager.getSound("GUI-Music").play(1.0);
+//        theMenuMusic.play();
+//
+//        primaryStage.show();
 
-        primaryStage.show();
 
-    }
 
-    public static VBox getMainBox() {
-
-        return mainBox;
+        // Should Be Removed
+        new Game().render(primaryStage);
+        theMenuMusic.stop();
 
     }
 

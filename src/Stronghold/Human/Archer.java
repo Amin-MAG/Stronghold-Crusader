@@ -1,4 +1,4 @@
-package Human;
+package Stronghold.Human;
 
 public class Archer extends Soldier {
 

@@ -1,6 +1,6 @@
-import Building.Building;
-import Human.Human;
-import Human.Swordsman;
+package Stronghold;
+
+import Stronghold.Building.Castle;
 
 public class Main {
 
@@ -8,6 +8,7 @@ public class Main {
 
 //        Human amin = new Swordsman();
 //        Game newGame = new Game();
+        Castle newcastle = new Castle(new int[] {53, 48}, "Amin");
 
     }
 

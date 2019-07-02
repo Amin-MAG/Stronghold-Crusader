@@ -1,4 +1,4 @@
-package Map.Tile;
+package Stronghold.Map.Tile;
 
 public class SeaTile extends Tile {
 
