@@ -5,13 +5,10 @@ import Stronghold.Human.Human;
 import Stronghold.Human.Soldier;
 import Stronghold.Map.GameMap;
 
-import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
 
 import javafx.animation.AnimationTimer;
 import javafx.event.EventHandler;
@@ -29,12 +26,11 @@ import javafx.stage.Stage;
 public class Game  {
 
 
-    final static String jsonGameSettingAddress = "JsonFiles/game_settings.json";
+    private static String mapName;
 
     private Map resources;
     private Map resourceRate;
-    public Object test;
-    public GameMap map;
+    public GameMap gameMap;
     public HashMap<String, ArrayList<Building>> myBuildings;
     public HashMap<String, ArrayList<Building>> otherBuildings;
     public ArrayList<Human> noneSoldjers;
@@ -56,18 +52,19 @@ public class Game  {
     final private Xform cameraXform2 = new Xform();
     final private Xform cameraXform3 = new Xform();
 
-    private static final double CAMERA_INITIAL_DISTANCE = -3000;
-    private static final double CAMERA_INITIAL_X_ANGLE = 45;
-    private static final double CAMERA_INITIAL_Y_ANGLE = -45;
-    private static final double CAMERA_NEAR_CLIP = 0.1;
+    private static double CAMERA_INITIAL_DISTANCE = -2000;
+    private static final double CAMERA_INITIAL_X_ANGLE = 55;
+//    private static final double CAMERA_INITIAL_X_ANGLE = 55;
+    private static final double CAMERA_INITIAL_Y_ANGLE = 135;
+    private static final double CAMERA_NEAR_CLIP = 0.5;
     private static final double CAMERA_FAR_CLIP = 10000.0;
 
 
     // Mouse
 
-    private static final double CONTROL_MULTIPLIER = 0.1;
-    private static final double SHIFT_MULTIPLIER = 10.0;
-    private static final double ROTATION_SPEED = 2.0;
+//    private static final double CONTROL_MULTIPLIER = 0.1;
+//    private static final double SHIFT_MULTIPLIER = 10.0;
+//    private static final double ROTATION_SPEED = 2.0;
     private static final double MOUSE_SPEED = 2;
     private static final double TRACK_SPEED = 0.3;
 
@@ -88,24 +85,21 @@ public class Game  {
     // Groups
 
     private final Xform earthGroup = new Xform();
-    private final Xform buildingsXform = new Xform();
+
+
+    Game(String mapName) {
+
+        // Should be Commented
+        ResourceManager.initialization();
+        gameMap = new GameMap("MAP-SAMPLE");
 
 
 
-    Game() {
+        Map jsonMap = ResourceManager.getJson("JSON-GAME");
 
-        JSONParser parser = new JSONParser();
+        resources = (Map) jsonMap.get("initial_resources");
+        resourceRate = (Map) jsonMap.get("initial_resource_rate");
 
-        try {
-
-            Object mapObject = parser.parse(new FileReader(jsonGameSettingAddress));
-
-            JSONObject jsonObject = (JSONObject) mapObject;
-
-            resources = (Map) jsonObject.get("initial_resources");
-            resourceRate = (Map) jsonObject.get("initial_resource_rate");
-
-        } catch (Exception e) {}
 
         myBuildings = new HashMap<>();
         myBuildings.put("CASTLE", null);
@@ -114,6 +108,7 @@ public class Game  {
         myBuildings.put("WORKSHOP", null);
 
         addBuilding("CASTLE", -500, 0);
+
 
         /*
             DELAY !
@@ -140,8 +135,6 @@ public class Game  {
 
     public void render(Stage primaryStage) {
 
-        // Should be Commented
-        ResourceManager.initialization();
 
         Scene scene = new Scene(root, 1600, 900, true);
         root.getChildren().add(world);
@@ -152,7 +145,7 @@ public class Game  {
         primaryStage.setScene(scene);
 
         buildCamera();
-        buildAxes();
+//        buildAxes();
         buildEarth();
 
 //        Task<Void> sleeper = new Task<Void>() {
@@ -170,16 +163,21 @@ public class Game  {
 //                removeBuilding(myBuildings.get("CASTLE").get(0));
 //            }
 //        });
+
 //        new Thread(sleeper).start();
 //        myBuildings.put("CASTLE", null);
 //        System.out.println(world.getChildren());
+
+
 
 
         addBuilding("WORKSHOP", 0, 100);
         addBuilding("BARRACKS", 0, 300);
         addBuilding("FARM", 750, 0);
 
-        buildingsXform.setRotateY(-45);
+
+
+//        buildingsXform.setRotateY(-45);
 
         scene.setCamera(camera);
 
@@ -201,9 +199,13 @@ public class Game  {
 
     private void buildCamera() {
 
+        if (root.getChildren().contains(cameraXform)) root.getChildren().remove(cameraXform);
         root.getChildren().add(cameraXform);
+        if (cameraXform.getChildren().contains(cameraXform2)) cameraXform.getChildren().remove(cameraXform2);
         cameraXform.getChildren().add(cameraXform2);
+        if (cameraXform2.getChildren().contains(cameraXform3)) cameraXform2.getChildren().remove(cameraXform3);
         cameraXform2.getChildren().add(cameraXform3);
+        if (cameraXform3.getChildren().contains(camera)) cameraXform3.getChildren().remove(camera);
         cameraXform3.getChildren().add(camera);
         cameraXform3.setRotateZ(180.0);
 
@@ -239,8 +241,13 @@ public class Game  {
 
             for (int j = -10; j < 10; j++) {
 
-//                createRect3D(earthGroup, 1000, 0, 1000, i*500, 0, j*500, null);
-                createRect3D(earthGroup, 200, 0, 200, i*202, 0, j*202, null, "TILE-DESERT", false);
+//                createRect3D(earthGroup, 100, 0, 100, 50 + i*100, 0, 50 + j*100, null, "TILE-DESERT",false);
+//                createRect3D(earthGroup, 500, 0, 500, 50 + i*500, 0, 50 + j*500, null, "TILE-GRASS",false);
+                createRect3D(earthGroup, 350, 0, 350, 50 + i*350, 0, 50 + j*350, null, "TILE-DESERT",false);
+//                if (i%2==0) createRect3D(earthGroup, 300, 0, 300, 50 + i*300, 0, 50 + j*300, null, "TILE-DESERT",false);
+//                else createRect3D(earthGroup, 300, 0, 300, 50 + i*300, 0, 50 + j*300, null, "TILE-GRASS",false);
+//                createRect3D(earthGroup, 200, 0, 200, i*202, 0, j*202, null, "TILE-DESERT", false);
+//                createRect3D(earthGroup, 75, 0, 75, i*75, 0, j*75, null, "TILE-DESERT", false);
 
             }
 
@@ -347,7 +354,7 @@ public class Game  {
         if (rotation) {
 
             item.setRotationAxis(new Point3D(1,0,0));
-            item.setRotate(45);
+            item.setRotate(40);
 
         }
 
@@ -368,6 +375,8 @@ public class Game  {
                 mouseOldX = me.getSceneX();
                 mouseOldY = me.getSceneY();
 
+//                System.out.println(mousePosX + " " + mousePosY);
+
             }
 
         });
@@ -384,15 +393,27 @@ public class Game  {
                 mouseDeltaX = (mousePosX - mouseOldX);
                 mouseDeltaY = (mousePosY - mouseOldY);
 
+
                 double modifier = 1.0;
 
-                if (me.isSecondaryButtonDown()) {
-                    cameraXform.ry.setAngle(cameraXform.ry.getAngle() -
-                            mouseDeltaX*modifier*modifier*ROTATION_SPEED);  //
-                    cameraXform.rx.setAngle(cameraXform.rx.getAngle() +
-                            mouseDeltaY*modifier*modifier*ROTATION_SPEED);  // -
-                } else if (me.isPrimaryButtonDown()) {
 
+//                if (me.isSecondaryButtonDown()) {
+//
+//                    cameraXform.ry.setAngle(cameraXform.ry.getAngle() - mouseDeltaX * ROTATION_SPEED);
+//                    cameraXform.rx.setAngle(cameraXform.rx.getAngle() + mouseDeltaY * ROTATION_SPEED);
+//
+//                } else if (me.isPrimaryButtonDown()) {
+                if (me.isPrimaryButtonDown()) {
+
+                    double oldXAngle = cameraXform.ry.getAngle();
+                    double oldYAngle = cameraXform.rx.getAngle();
+
+
+                    if (mouseDeltaY < 0) CAMERA_INITIAL_DISTANCE += mouseDeltaY*0.5;
+                    else CAMERA_INITIAL_DISTANCE += mouseDeltaY*0.5;
+                    buildCamera();
+//                    cameraXform.ry.setAngle(oldYAngle);
+//                    cameraXform.rx.setAngle(oldXAngle);
                     cameraXform2.t.setX(cameraXform2.t.getX() + mouseDeltaX * MOUSE_SPEED * TRACK_SPEED);
                     cameraXform2.t.setY(cameraXform2.t.getY() + mouseDeltaY * MOUSE_SPEED * TRACK_SPEED);
 

@@ -2,7 +2,7 @@ package Stronghold.Map.Tile;
 
 public class DesertTile extends Tile {
 
-    DesertTile() {
+    public DesertTile() {
 
         super("desertPic", true);
 

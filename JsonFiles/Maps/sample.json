@@ -1,18 +1,17 @@
 {
-  "name": "test map",
   "board": [
-    "wwwwwwwwwww",
-    "weffffffffw",
-    "wffwwwwwffw",
-    "wfffffswffw",
-    "wffwwwwwffw",
-    "wffwseeeefw",
-    "wffwwwwwffw",
-    "wfffffswffw",
-    "wffwwwwwffw",
-    "wfffffffffw",
-    "wwwwwwwwwww"
+    "1254638950",
+    "1254638950",
+    "1254638950",
+    "1254638950",
+    "1254638950",
+    "1254638950",
+    "1254638950",
+    "1254638950",
+    "1254638950",
+    "1254638950"
   ],
+  "size": [10, 10],
   "number_of_players": 2,
   "player_locations": [
     [10, 10],

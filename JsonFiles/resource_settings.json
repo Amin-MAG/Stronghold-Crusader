@@ -10,6 +10,7 @@
     "GUI-EXIT": "\\Assets\\img\\btn\\exit_btn.jpg",
     "GUI-EXIT_HOVER": "\\Assets\\img\\btn\\exit_btnH.jpg",
     "TILE-DESERT": "\\Assets\\img\\tile\\desert_tile.jpg",
+    "TILE-GRASS": "\\Assets\\img\\tile\\grass_tile.jpg",
     "BUILDING-CASTLE": "\\Assets\\img\\buildings\\castle.png",
     "BUILDING-MOSQUE": "\\Assets\\img\\buildings\\mosque.png",
     "BUILDING-WORKSHOP": "\\Assets\\img\\buildings\\workshop.png",
@@ -19,5 +20,11 @@
   "sounds": {
     "GUI-Music": "\\Assets\\soundtrack\\02 - A Strong Spice.mp3",
     "GUI-HOVER_BTN": "\\Assets\\soundtrack\\swordhit.mp3"
+  },
+  "jsons": {
+    "JSON-HUMAN": "\\JsonFiles\\human_settings.json",
+    "JSON-BUILDING": "\\JsonFiles\\building_settings.json",
+    "JSON-GAME": "\\JsonFiles\\game_settings.json",
+    "MAP-SAMPLE": "\\JsonFiles\\Maps\\sample.json"
   }
 }

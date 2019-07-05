@@ -21,6 +21,7 @@ public class ResourceManager{
 
     private static HashMap<String, Image> IMAGES = new HashMap<>();
     private static HashMap<String, AudioClip> SOUNDS = new HashMap<>();
+    private static HashMap<String, Map> JSONS = new HashMap<>();
 
     ResourceManager() {
 
@@ -48,14 +49,21 @@ public class ResourceManager{
 
             }
 
-//            System.out.println(RESOURCES);
-
             // Sounds
 
             RESOURCES  = (Map) jsonObject.get("sounds");
             for (Object key : RESOURCES.keySet()) {
 
                 SOUNDS.put( (String) key, new AudioClip(new File(ResourceManager.gameAddress + RESOURCES.get(key)).toURI().toString()) );
+
+            }
+
+            // Jsons
+
+            RESOURCES  = (Map) jsonObject.get("jsons");
+            for (Object key : RESOURCES.keySet()) {
+
+                JSONS.put( (String) key, (Map) parser.parse(new FileReader(ResourceManager.gameAddress + RESOURCES.get(key))));
 
             }
 
@@ -72,6 +80,12 @@ public class ResourceManager{
     public static Image getImage(String name) {
 
         return IMAGES.get(name);
+
+    }
+
+    public static Map getJson(String name) {
+
+        return JSONS.get(name);
 
     }
 

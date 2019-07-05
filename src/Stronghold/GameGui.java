@@ -39,7 +39,7 @@ public class GameGui extends Application {
                     @Override
                     public void handle(MouseEvent event) {
 
-                        Game myGame = new Game();
+                        Game myGame = new Game("sample");
                         theMenuMusic.stop();
                         myGame.render(primaryStage);
 
@@ -91,7 +91,7 @@ public class GameGui extends Application {
 
 
         // Should Be Removed
-        new Game().render(primaryStage);
+        new Game("sample").render(primaryStage);
         theMenuMusic.stop();
 
     }
