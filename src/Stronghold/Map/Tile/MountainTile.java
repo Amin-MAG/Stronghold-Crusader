@@ -2,9 +2,9 @@ package Stronghold.Map.Tile;
 
 public class MountainTile extends Tile {
 
-    MountainTile() {
+    MountainTile(int[] location) {
 
-        super("mountainPic", false);
+        super("TILE-MOUNTAIN", false, location);
 
     }
 

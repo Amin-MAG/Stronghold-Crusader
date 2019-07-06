@@ -83,7 +83,7 @@ public class GameGui extends Application {
             }
         }.start();
 
-
+//
 //        theMenuMusic.play();
 //
 //        primaryStage.show();

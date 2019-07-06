@@ -145,7 +145,7 @@ public class Game  {
         primaryStage.setScene(scene);
 
         buildCamera();
-//        buildAxes();
+        buildAxes();
         buildEarth();
 
 //        Task<Void> sleeper = new Task<Void>() {
@@ -237,21 +237,36 @@ public class Game  {
 
     public void buildEarth() {
 
-        for (int i = -10; i < 10; i++) {
 
-            for (int j = -10; j < 10; j++) {
+        for (int i = 0; i < gameMap.gameBoard.length; i++) {
 
-//                createRect3D(earthGroup, 100, 0, 100, 50 + i*100, 0, 50 + j*100, null, "TILE-DESERT",false);
-//                createRect3D(earthGroup, 500, 0, 500, 50 + i*500, 0, 50 + j*500, null, "TILE-GRASS",false);
-                createRect3D(earthGroup, 350, 0, 350, 50 + i*350, 0, 50 + j*350, null, "TILE-DESERT",false);
-//                if (i%2==0) createRect3D(earthGroup, 300, 0, 300, 50 + i*300, 0, 50 + j*300, null, "TILE-DESERT",false);
-//                else createRect3D(earthGroup, 300, 0, 300, 50 + i*300, 0, 50 + j*300, null, "TILE-GRASS",false);
-//                createRect3D(earthGroup, 200, 0, 200, i*202, 0, j*202, null, "TILE-DESERT", false);
-//                createRect3D(earthGroup, 75, 0, 75, i*75, 0, j*75, null, "TILE-DESERT", false);
+            for (int j = 0; j < gameMap.gameBoard[0].length; j++) {
+
+//                System.out.println("asjdh");
+                world.getChildren().add(gameMap.gameBoard[i][j].xform);
 
             }
 
+//            System.out.println();
+
         }
+
+
+//        for (int i = -10; i < 10; i++) {
+//
+//            for (int j = -10; j < 10; j++) {
+//
+//                createRect3D(earthGroup, 350, 0, 350, 50 + i*350, 0, 50 + j*350, null, "TILE-GRASS",false);
+////                createRect3D(earthGroup, 100, 0, 100, 50 + i*100, 0, 50 + j*100, null, "TILE-DESERT",false);
+////                createRect3D(earthGroup, 500, 0, 500, 50 + i*500, 0, 50 + j*500, null, "TILE-GRASS",false);
+////                if (i%2==0) createRect3D(earthGroup, 300, 0, 300, 50 + i*300, 0, 50 + j*300, null, "TILE-DESERT",false);
+////                else createRect3D(earthGroup, 300, 0, 300, 50 + i*300, 0, 50 + j*300, null, "TILE-GRASS",false);
+////                createRect3D(earthGroup, 200, 0, 200, i*202, 0, j*202, null, "TILE-DESERT", false);
+////                createRect3D(earthGroup, 75, 0, 75, i*75, 0, j*75, null, "TILE-DESERT", false);
+//
+//            }
+//
+//        }
 
         world.getChildren().add(earthGroup);
 
@@ -399,8 +414,8 @@ public class Game  {
 
 //                if (me.isSecondaryButtonDown()) {
 //
-//                    cameraXform.ry.setAngle(cameraXform.ry.getAngle() - mouseDeltaX * ROTATION_SPEED);
-//                    cameraXform.rx.setAngle(cameraXform.rx.getAngle() + mouseDeltaY * ROTATION_SPEED);
+//                    cameraXform.ry.setAngle(cameraXform.ry.getAngle() - mouseDeltaX * 100);
+//                    cameraXform.rx.setAngle(cameraXform.rx.getAngle() + mouseDeltaY * 100);
 //
 //                } else if (me.isPrimaryButtonDown()) {
                 if (me.isPrimaryButtonDown()) {
