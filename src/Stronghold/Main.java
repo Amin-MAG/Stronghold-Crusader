@@ -1,6 +1,6 @@
 package Stronghold;
 
-import Stronghold.Building.Castle;
+import Stronghold.GameObjects.Building.Castle;
 
 public class Main {
 

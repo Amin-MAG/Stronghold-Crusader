@@ -1,4 +1,4 @@
-package Stronghold.Building;
+package Stronghold.GameObjects.Building;
 
 public class Barracks extends Building {
 

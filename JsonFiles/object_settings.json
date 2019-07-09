@@ -1,0 +1,7 @@
+{
+  "chestnut": {
+    "size" : [185 , 185, 92.5],
+	"cycle" : 13,
+    "animation_image" : "OBJECT-TREE-CHESTNUT"
+  }
+}

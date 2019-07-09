@@ -1,4 +1,4 @@
-package Stronghold.Building;
+package Stronghold.GameObjects.Building;
 
 public class Castle extends Building{
 

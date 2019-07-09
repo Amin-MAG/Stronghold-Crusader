@@ -1,8 +1,9 @@
 package Stronghold;
 
-import Stronghold.Building.*;
-import Stronghold.Human.Human;
-import Stronghold.Human.Soldier;
+import Stronghold.GameObjects.Building.*;
+import Stronghold.GameObjects.GameAnimation;
+import Stronghold.GameObjects.Human.*;
+import Stronghold.GameObjects.NaturalObject.Chestnut;
 import Stronghold.Map.GameMap;
 
 import java.util.ArrayList;
@@ -17,11 +18,13 @@ import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.PerspectiveCamera;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.Box;
 import javafx.stage.Stage;
+
 
 public class Game  {
 
@@ -34,7 +37,7 @@ public class Game  {
     public HashMap<String, ArrayList<Building>> myBuildings;
     public HashMap<String, ArrayList<Building>> otherBuildings;
     public ArrayList<Human> noneSoldjers;
-    public ArrayList<Soldier> soldjers;
+    public ArrayList<GameAnimation> gameObjectAnimations = new ArrayList<>();
     public static boolean haveCastle = false;
 
 
@@ -84,7 +87,9 @@ public class Game  {
 
     // Groups
 
-    private final Xform earthGroup = new Xform();
+    public final static Xform earthGroup = new Xform();
+    public final static Xform earthObjects = new Xform();
+    private final Xform humanXfrom = new Xform();
 
 
     Game(String mapName) {
@@ -109,6 +114,13 @@ public class Game  {
 
         addBuilding("CASTLE", -500, 0);
 
+        addHuman("VASSAL-DOWN", -300, 0);
+        addHuman("SWORDSMAN-DOWN", 600, 600);
+        addHuman("SWORDSMAN-DOWN", -500, 500);
+
+        addAnimation("TREE-CHESTNUT", 200, 800);
+
+        world.getChildren().addAll(humanXfrom);
 
         /*
             DELAY !
@@ -145,7 +157,7 @@ public class Game  {
         primaryStage.setScene(scene);
 
         buildCamera();
-        buildAxes();
+        startObjectAnimation();
         buildEarth();
 
 //        Task<Void> sleeper = new Task<Void>() {
@@ -163,21 +175,15 @@ public class Game  {
 //                removeBuilding(myBuildings.get("CASTLE").get(0));
 //            }
 //        });
-
 //        new Thread(sleeper).start();
 //        myBuildings.put("CASTLE", null);
 //        System.out.println(world.getChildren());
-
-
 
 
         addBuilding("WORKSHOP", 0, 100);
         addBuilding("BARRACKS", 0, 300);
         addBuilding("FARM", 750, 0);
 
-
-
-//        buildingsXform.setRotateY(-45);
 
         scene.setCamera(camera);
 
@@ -193,6 +199,34 @@ public class Game  {
 
 
         primaryStage.show();
+
+    }
+
+    public void startObjectAnimation() {
+
+        long initialNanoTime = System.nanoTime();
+
+        new AnimationTimer() {
+
+            @Override
+            public void handle(long now) {
+
+                earthObjects.getChildren().clear();
+
+                int animationCycle = (int) (((now-initialNanoTime)/100000000));
+
+                for (GameAnimation anime : gameObjectAnimations) {
+
+                    earthObjects.getChildren().add(anime.buildFrame(animationCycle));
+
+                }
+
+            }
+
+        }.start();
+
+        earthObjects.setRotateY(-45);
+        earthGroup.getChildren().add(earthObjects);
 
     }
 
@@ -242,33 +276,52 @@ public class Game  {
 
             for (int j = 0; j < gameMap.gameBoard[0].length; j++) {
 
-//                System.out.println("asjdh");
-                world.getChildren().add(gameMap.gameBoard[i][j].xform);
+                earthGroup.getChildren().add(gameMap.gameBoard[i][j].xform);
 
             }
-
-//            System.out.println();
 
         }
 
 
-//        for (int i = -10; i < 10; i++) {
-//
-//            for (int j = -10; j < 10; j++) {
-//
-//                createRect3D(earthGroup, 350, 0, 350, 50 + i*350, 0, 50 + j*350, null, "TILE-GRASS",false);
-////                createRect3D(earthGroup, 100, 0, 100, 50 + i*100, 0, 50 + j*100, null, "TILE-DESERT",false);
-////                createRect3D(earthGroup, 500, 0, 500, 50 + i*500, 0, 50 + j*500, null, "TILE-GRASS",false);
-////                if (i%2==0) createRect3D(earthGroup, 300, 0, 300, 50 + i*300, 0, 50 + j*300, null, "TILE-DESERT",false);
-////                else createRect3D(earthGroup, 300, 0, 300, 50 + i*300, 0, 50 + j*300, null, "TILE-GRASS",false);
-////                createRect3D(earthGroup, 200, 0, 200, i*202, 0, j*202, null, "TILE-DESERT", false);
-////                createRect3D(earthGroup, 75, 0, 75, i*75, 0, j*75, null, "TILE-DESERT", false);
-//
-//            }
-//
-//        }
-
         world.getChildren().add(earthGroup);
+
+
+    }
+
+    public void addHuman(String humanName, int x, int y) {
+
+
+        switch (humanName) {
+            case "VASSAL-DOWN":
+                Vassal newVassal = new Vassal("DOWN", new int[] {x+30, y-30});
+                humanXfrom.getChildren().addAll(newVassal.xform);
+                break;
+            case "SWORDSMAN-DOWN":
+                Swordsman newSoildier = new Swordsman("DOWN", new int[] {x+30, y-30});
+                humanXfrom.getChildren().addAll(newSoildier.xform);                break;
+            case "WORKER-DOWN":
+                Worker newWorker = new Worker("DOWN", new int[] {x+30, y-30});
+                humanXfrom.getChildren().addAll(newWorker.xform);
+                break;
+            default:
+                break;
+        }
+
+        humanXfrom.setRotateY(-45);
+    }
+
+    public void addAnimation(String animationName, int x, int y) {
+
+        switch (animationName) {
+
+            case "TREE-CHESTNUT":
+                Chestnut newChestnut = new Chestnut(new int[] {x, y});
+                gameObjectAnimations.add(newChestnut);
+                break;
+            default:
+                break;
+
+        }
 
     }
 
@@ -278,7 +331,6 @@ public class Game  {
         switch (buildingName) {
             case "CASTLE":
                 if (!haveCastle) {
-
                     Castle newCastle = new Castle(new int[]{x, y}, "Amin");
                     newCastle.xform.setRotateY(-45);
                     world.getChildren().addAll(newCastle.xform);
@@ -357,8 +409,21 @@ public class Game  {
         final PhongMaterial myMaterial = new PhongMaterial();
         final Box item = new Box(width, height, depth);
 
+
         if (color != null) myMaterial.setDiffuseColor(color);
-        else if (imageName != null) myMaterial.setDiffuseMap(ResourceManager.getImage(imageName));
+        else if (imageName != null) {
+
+            Image theImage = ResourceManager.getImage(imageName);
+
+            if (theImage == null) {
+
+                theImage = ResourceManager.getAnimation(imageName);
+
+            }
+
+            myMaterial.setDiffuseMap(theImage);
+
+        }
 
         item.setMaterial(myMaterial);
 

@@ -15,7 +15,25 @@
     "BUILDING-MOSQUE": "\\Assets\\img\\buildings\\mosque.png",
     "BUILDING-WORKSHOP": "\\Assets\\img\\buildings\\workshop.png",
     "BUILDING-BARRACKS": "\\Assets\\img\\buildings\\barracks.png",
-    "BUILDING-FARM": "\\Assets\\img\\buildings\\farm.png"
+    "BUILDING-FARM": "\\Assets\\img\\buildings\\farm.png",
+    "HUMAN-VASSAL-DOWN": "\\Assets\\img\\human\\vassal\\down.png",
+    "HUMAN-SWORDSMAN-DOWN": "\\Assets\\img\\human\\swordsman\\down.png",
+    "HUMAN-WORKER-DOWN": "\\Assets\\img\\human\\worker\\down.png"
+  },
+  "animations": {
+    "OBJECT-TREE-CHESTNUT-0" : "\\Assets\\img\\objects\\tree\\0_0img0.png",
+    "OBJECT-TREE-CHESTNUT-1" : "\\Assets\\img\\objects\\tree\\0_0img2.png",
+    "OBJECT-TREE-CHESTNUT-2" : "\\Assets\\img\\objects\\tree\\0_0img4.png",
+    "OBJECT-TREE-CHESTNUT-3" : "\\Assets\\img\\objects\\tree\\0_0img6.png",
+    "OBJECT-TREE-CHESTNUT-4" : "\\Assets\\img\\objects\\tree\\0_0img8.png",
+    "OBJECT-TREE-CHESTNUT-5" : "\\Assets\\img\\objects\\tree\\0_0img10.png",
+    "OBJECT-TREE-CHESTNUT-6" : "\\Assets\\img\\objects\\tree\\0_0img12.png",
+    "OBJECT-TREE-CHESTNUT-7" : "\\Assets\\img\\objects\\tree\\0_0img14.png",
+    "OBJECT-TREE-CHESTNUT-8" : "\\Assets\\img\\objects\\tree\\0_0img16.png",
+    "OBJECT-TREE-CHESTNUT-9" : "\\Assets\\img\\objects\\tree\\0_0img18.png",
+    "OBJECT-TREE-CHESTNUT-10" : "\\Assets\\img\\objects\\tree\\0_0img20.png",
+    "OBJECT-TREE-CHESTNUT-11" : "\\Assets\\img\\objects\\tree\\0_0img22.png",
+    "OBJECT-TREE-CHESTNUT-12" : "\\Assets\\img\\objects\\tree\\0_0img24.png"
   },
   "sounds": {
     "GUI-Music": "\\Assets\\soundtrack\\02 - A Strong Spice.mp3",
@@ -25,6 +43,7 @@
     "JSON-HUMAN": "\\JsonFiles\\human_settings.json",
     "JSON-BUILDING": "\\JsonFiles\\building_settings.json",
     "JSON-GAME": "\\JsonFiles\\game_settings.json",
+    "JSON-OBJECTS": "\\JsonFiles\\object_settings.json",
     "MAP-SAMPLE": "\\JsonFiles\\Maps\\sample.json"
   }
 }

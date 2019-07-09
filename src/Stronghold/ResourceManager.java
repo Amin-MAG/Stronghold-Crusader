@@ -20,6 +20,7 @@ public class ResourceManager{
     private final static String jsonResourseSettingAddress = "JsonFiles/resource_settings.json";
 
     private static HashMap<String, Image> IMAGES = new HashMap<>();
+    private static HashMap<String, Image> ANIMATIONS = new HashMap<>();
     private static HashMap<String, AudioClip> SOUNDS = new HashMap<>();
     private static HashMap<String, Map> JSONS = new HashMap<>();
 
@@ -46,6 +47,16 @@ public class ResourceManager{
             for (Object key : RESOURCES.keySet()) {
 
                 IMAGES.put( (String) key, new Image(new FileInputStream(gameAddress + (RESOURCES.get(key)))));
+
+            }
+
+
+            // Animations
+
+            RESOURCES  = (Map) jsonObject.get("animations");
+            for (Object key : RESOURCES.keySet()) {
+
+                ANIMATIONS.put( (String) key, new Image(new FileInputStream(gameAddress + (RESOURCES.get(key)))));
 
             }
 
@@ -107,6 +118,12 @@ public class ResourceManager{
     public static Background getBackground(String name) {
 
         return (new Background(getBackgroundImage(name)));
+
+    }
+
+    public static Image getAnimation(String name) {
+
+        return ANIMATIONS.get(name);
 
     }
 
