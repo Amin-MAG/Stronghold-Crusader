@@ -14,12 +14,10 @@ import java.util.Map;
 import javafx.animation.AnimationTimer;
 import javafx.event.EventHandler;
 import javafx.geometry.Point3D;
-import javafx.scene.Group;
-import javafx.scene.Node;
-import javafx.scene.PerspectiveCamera;
-import javafx.scene.Scene;
+import javafx.scene.*;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.Box;
@@ -50,6 +48,7 @@ public class Game  {
     // Camera
 
     final private PerspectiveCamera camera = new PerspectiveCamera(true);
+    final private PerspectiveCamera normal2dCamera = new PerspectiveCamera(false);
 
     final private Xform cameraXform = new Xform();
     final private Xform cameraXform2 = new Xform();
@@ -112,15 +111,15 @@ public class Game  {
         myBuildings.put("BARRACKS", null);
         myBuildings.put("WORKSHOP", null);
 
-        addBuilding("CASTLE", -500, 0);
-
-        addHuman("VASSAL-DOWN", -300, 0);
-        addHuman("SWORDSMAN-DOWN", 600, 600);
-        addHuman("SWORDSMAN-DOWN", -500, 500);
-
-        addAnimation("TREE-CHESTNUT", 200, 800);
-
-        world.getChildren().addAll(humanXfrom);
+//        addBuilding("CASTLE", -500, 0);
+//
+//        addHuman("VASSAL-DOWN", -300, 0);
+//        addHuman("SWORDSMAN-DOWN", 600, 600);
+//        addHuman("SWORDSMAN-DOWN", -500, 500);
+//
+//        addAnimation("TREE-CHESTNUT", 10,0);
+//
+//        world.getChildren().addAll(humanXfrom);
 
         /*
             DELAY !
@@ -147,18 +146,64 @@ public class Game  {
 
     public void render(Stage primaryStage) {
 
+        // Game Scene
 
-        Scene scene = new Scene(root, 1600, 900, true);
-        root.getChildren().add(world);
-        scene.setFill(Color.GREY);
-        handleMouse(scene, world);
+        SubScene subScene = new SubScene(world, 1920, 900);
+        subScene.setFill(Color.GRAY);
+        subScene.setCamera(camera);
+
+
+        // Game Menu
+
+        Group concstructionMenu = new Group();
+        createRect(concstructionMenu, 1920,282, 0, 1080-282, "GAME-MENU");
+
+
+        // Adding to Root Group
+
+        root.getChildren().add(subScene);
+        root.getChildren().add(concstructionMenu);
+
+
+        // Create Scene with group Root
+
+        Scene gameMenu = new Scene(root, 1280, 182);
+
+
+        // Controller
+
+        handleMouse(gameMenu, world);
+
+
+        // Scene Setting and Stage
 
         primaryStage.setTitle("Game");
-        primaryStage.setScene(scene);
+        primaryStage.setScene(gameMenu);
+
+
+        // Initial Builds
 
         buildCamera();
-        startObjectAnimation();
         buildEarth();
+
+
+        // Testing Objects And Animations
+
+
+        addBuilding("WORKSHOP", 0, 100);
+        addBuilding("BARRACKS", 0, 300);
+        addBuilding("FARM", 750, 0);
+        addBuilding("CASTLE", -500, 0);
+        addHuman("VASSAL-DOWN", -300, 0);
+        addHuman("SWORDSMAN-DOWN", 600, 600);
+        addHuman("SWORDSMAN-DOWN", -500, 500);
+
+        addAnimation("TREE-CHESTNUT", 10,0);
+        startObjectAnimation();
+
+
+        world.getChildren().addAll(humanXfrom);
+
 
 //        Task<Void> sleeper = new Task<Void>() {
 //            @Override
@@ -180,27 +225,11 @@ public class Game  {
 //        System.out.println(world.getChildren());
 
 
-        addBuilding("WORKSHOP", 0, 100);
-        addBuilding("BARRACKS", 0, 300);
-        addBuilding("FARM", 750, 0);
-
-
-        scene.setCamera(camera);
-
-
-        new AnimationTimer() {
-            @Override
-            public void handle(long now) {
-
-                primaryStage.setFullScreen(true);
-
-            }
-        }.start();
-
 
         primaryStage.show();
 
     }
+
 
     public void startObjectAnimation() {
 
@@ -285,7 +314,6 @@ public class Game  {
 
         world.getChildren().add(earthGroup);
 
-
     }
 
     public void addHuman(String humanName, int x, int y) {
@@ -333,12 +361,16 @@ public class Game  {
                 if (!haveCastle) {
                     Castle newCastle = new Castle(new int[]{x, y}, "Amin");
                     newCastle.xform.setRotateY(-45);
+                    newCastle.xform.addEventFilter(MouseEvent.MOUSE_CLICKED, e -> {
+
+                        System.out.println("Castle Has Been Selected !");
+
+                    });
                     world.getChildren().addAll(newCastle.xform);
                     haveCastle = true;
                     ArrayList<Building> castleList = new ArrayList<>();
                     castleList.add(newCastle);
                     myBuildings.put("CASTLE", castleList);
-
                 } else System.out.println("We have one castle !!");
                 break;
             case "FARM":
@@ -443,7 +475,109 @@ public class Game  {
     }
 
 
+    public static void createRect(Group group, double width, double height, double x, double y, String imageName) {
+
+
+        VBox vBoxItem = new VBox();
+
+        vBoxItem.setTranslateX(x);
+        vBoxItem.setTranslateY(y);
+
+        vBoxItem.setMaxWidth(width);
+        vBoxItem.setMaxHeight(height);
+        vBoxItem.setMinWidth(width);
+        vBoxItem.setMinHeight(height);
+
+        vBoxItem.setBackground(ResourceManager.getBackground(imageName));
+
+        group.getChildren().add(vBoxItem);
+
+    }
+
+
     private void handleMouse(Scene scene, final Node root) {
+
+        /*
+
+            drag-left:
+                screen
+            drag-right:
+                select
+            click-left:
+                open-building
+                select building
+                construct building
+                attack
+                move
+
+         */
+
+//        scene.addEventFilter(MouseEvent.ANY, e -> {
+//
+//
+//            mousePosX = e.getSceneX();
+//            mousePosY = e.getSceneY();
+//
+//            buildCamera();
+//            if (mouseDeltaY < 0) CAMERA_INITIAL_DISTANCE += mouseDeltaY * 0.5;
+//            else CAMERA_INITIAL_DISTANCE += mouseDeltaY * 0.5;
+//
+//
+//            if (mousePosX > 0 && mousePosX < 160 && mousePosY > 110 && mousePosY< 910) {
+//
+//                cameraXform2.t.setX(cameraXform2.t.getX() + 40 * MOUSE_SPEED * TRACK_SPEED);
+//
+//            } else if (mousePosX > 1600 && mousePosX < 1920 && mousePosY > 130 && mousePosY< 910) {
+//
+//                cameraXform2.t.setX(cameraXform2.t.getX() + -40 * MOUSE_SPEED * TRACK_SPEED);
+//
+//
+//            } else if (mousePosX > 290 && mousePosX < 1600 && mousePosY > 0 && mousePosY< 130) {
+//
+//                CAMERA_INITIAL_DISTANCE += 40 * 0.5;
+//                cameraXform2.t.setY(cameraXform2.t.getY() + 40 * MOUSE_SPEED * TRACK_SPEED);
+//
+//            } else if (mousePosX > 290 && mousePosX < 1600 && mousePosY > 910 && mousePosY< 1080) {
+//
+//                CAMERA_INITIAL_DISTANCE += -40 * 0.5;
+//                cameraXform2.t.setY(cameraXform2.t.getY() + -40 * MOUSE_SPEED * TRACK_SPEED);
+//
+//            }
+//
+//        });
+
+//        scene.setOnMouseEntered(new EventHandler<MouseEvent>() {
+//
+//            @Override
+//            public void handle(MouseEvent me) {
+//
+//                mousePosX = me.getSceneX();
+//                mousePosY = me.getSceneY();
+//
+//                buildCamera();
+//
+//                if (mousePosX > 0 && mousePosX < 160 && mousePosY > 110 && mousePosY< 910) {
+//
+//                    cameraXform2.t.setX(cameraXform2.t.getX() + 40 * MOUSE_SPEED * TRACK_SPEED);
+//
+//                } else if (mousePosX > 1600 && mousePosX < 1920 && mousePosY > 130 && mousePosY< 910) {
+//
+//                    cameraXform2.t.setX(cameraXform2.t.getX() + -40 * MOUSE_SPEED * TRACK_SPEED);
+//
+//
+//                } else if (mousePosX > 290 && mousePosX < 1600 && mousePosY > 0 && mousePosY< 130) {
+//
+//                    cameraXform2.t.setY(cameraXform2.t.getY() + 40 * MOUSE_SPEED * TRACK_SPEED);
+//
+//                } else if (mousePosX > 290 && mousePosX < 1600 && mousePosY > 910 && mousePosY< 1080) {
+//
+//                    cameraXform2.t.setY(cameraXform2.t.getY() + -40 * MOUSE_SPEED * TRACK_SPEED);
+//
+//                }
+//            }
+//
+//        });
+
 
         scene.setOnMousePressed(new EventHandler<MouseEvent>() {
 
@@ -452,10 +586,8 @@ public class Game  {
 
                 mousePosX = me.getSceneX();
                 mousePosY = me.getSceneY();
-                mouseOldX = me.getSceneX();
-                mouseOldY = me.getSceneY();
-
 //                System.out.println(mousePosX + " " + mousePosY);
+//                System.out.println();
 
             }
 
@@ -477,25 +609,27 @@ public class Game  {
                 double modifier = 1.0;
 
 
-//                if (me.isSecondaryButtonDown()) {
-//
-//                    cameraXform.ry.setAngle(cameraXform.ry.getAngle() - mouseDeltaX * 100);
-//                    cameraXform.rx.setAngle(cameraXform.rx.getAngle() + mouseDeltaY * 100);
-//
-//                } else if (me.isPrimaryButtonDown()) {
-                if (me.isPrimaryButtonDown()) {
+                if (me.isSecondaryButtonDown()) {
 
-                    double oldXAngle = cameraXform.ry.getAngle();
-                    double oldYAngle = cameraXform.rx.getAngle();
+                    cameraXform.ry.setAngle(cameraXform.ry.getAngle() - mouseDeltaX * 4);
+                    cameraXform.rx.setAngle(cameraXform.rx.getAngle() + mouseDeltaY * 4);
+
+                } else if (me.isPrimaryButtonDown()) {
+//                if (me.isPrimaryButtonDown()) {
+
+//                    double oldXAngle = cameraXform.ry.getAngle();
+//                    double oldYAngle = cameraXform.rx.getAngle();
 
 
-                    if (mouseDeltaY < 0) CAMERA_INITIAL_DISTANCE += mouseDeltaY*0.5;
-                    else CAMERA_INITIAL_DISTANCE += mouseDeltaY*0.5;
+                    if (mouseDeltaY < 0) CAMERA_INITIAL_DISTANCE += mouseDeltaY * 0.5;
+                    else CAMERA_INITIAL_DISTANCE += mouseDeltaY * 0.5;
+
                     buildCamera();
-//                    cameraXform.ry.setAngle(oldYAngle);
-//                    cameraXform.rx.setAngle(oldXAngle);
                     cameraXform2.t.setX(cameraXform2.t.getX() + mouseDeltaX * MOUSE_SPEED * TRACK_SPEED);
                     cameraXform2.t.setY(cameraXform2.t.getY() + mouseDeltaY * MOUSE_SPEED * TRACK_SPEED);
+//                    cameraXform.ry.setAngle(oldYAngle);
+//                    cameraXform.rx.setAngle(oldXAngle);
+
 
                 }
 

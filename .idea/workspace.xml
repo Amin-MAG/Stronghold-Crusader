@@ -5,31 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac4f78e8-03c2-4260-a12e-2e4d98e441e9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Stronghold/GameObjects/Human/Archer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Stronghold/GameObjects/Human/Human.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Stronghold/GameObjects/Human/Swordsman.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Stronghold/GameObjects/Human/Vassal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Stronghold/GameObjects/Human/Worker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/img/buildings/barracks.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/img/buildings/barracks.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/img/buildings/castle.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/img/buildings/castle.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/img/buildings/castle2.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/img/buildings/castle2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/img/buildings/workshop.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/img/buildings/workshop.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JsonFiles/Maps/sample.json" beforeDir="false" afterPath="$PROJECT_DIR$/JsonFiles/Maps/sample.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JsonFiles/human_settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/JsonFiles/human_settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JsonFiles/building_settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/JsonFiles/building_settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JsonFiles/object_settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/JsonFiles/object_settings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JsonFiles/resource_settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/JsonFiles/resource_settings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/note.txt" beforeDir="false" afterPath="$PROJECT_DIR$/note.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Stronghold/Building/Barracks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Stronghold/GameObjects/Building/Barracks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Stronghold/Building/Building.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Stronghold/GameObjects/Building/Building.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Stronghold/Building/Castle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Stronghold/GameObjects/Building/Castle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Stronghold/Building/Farm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Stronghold/GameObjects/Building/Farm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Stronghold/Building/Workshop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Stronghold/GameObjects/Building/Workshop.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Stronghold/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Stronghold/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Stronghold/GameGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Stronghold/GameGui.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Stronghold/Human/Archer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Stronghold/Human/BusyWorker.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Stronghold/Human/FreeWorker.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Stronghold/Human/Human.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Stronghold/Human/Soldier.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Stronghold/Human/Swordsman.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Stronghold/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Stronghold/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Stronghold/ResourceManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Stronghold/ResourceManager.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,7 +25,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Stronghold$GameGui.ic" NAME="GameGui Coverage Results" MODIFIED="1562416033485" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Stronghold$GameGui.ic" NAME="GameGui Coverage Results" MODIFIED="1562759689529" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Test.*</FILTER>
     </SUITE>
   </component>
@@ -138,41 +124,44 @@
     <session id="749187908">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="16" />
+          <entry key="project.closed" value="17" />
           <entry key="project.open.time.0" value="3" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.11" value="3" />
           <entry key="project.open.time.12" value="4" />
           <entry key="project.open.time.13" value="2" />
           <entry key="project.open.time.14" value="1" />
+          <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.2" value="2" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="21" />
+          <entry key="project.opened" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="allowed_json_files" value="1" />
+          <entry key="class" value="1" />
           <entry key="html" value="2" />
           <entry key="iml" value="1" />
-          <entry key="java" value="180" />
+          <entry key="java" value="196" />
           <entry key="jpg" value="3" />
-          <entry key="json" value="39" />
+          <entry key="json" value="44" />
           <entry key="png" value="4" />
           <entry key="txt" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="CLASS" value="1" />
           <entry key="HTML" value="2" />
           <entry key="IDEA_MODULE" value="1" />
           <entry key="Image" value="7" />
-          <entry key="JAVA" value="180" />
-          <entry key="JSON" value="39" />
+          <entry key="JAVA" value="196" />
+          <entry key="JSON" value="44" />
           <entry key="PLAIN_TEXT" value="4" />
         </counts>
       </usages-collector>
@@ -181,16 +170,16 @@
           <entry key="allowed_json_files" value="73" />
           <entry key="dummy" value="32" />
           <entry key="html" value="201" />
-          <entry key="java" value="30476" />
-          <entry key="json" value="1470" />
+          <entry key="java" value="33431" />
+          <entry key="json" value="1593" />
           <entry key="txt" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="201" />
-          <entry key="JAVA" value="30476" />
-          <entry key="JSON" value="1470" />
+          <entry key="JAVA" value="33431" />
+          <entry key="JSON" value="1593" />
           <entry key="PLAIN_TEXT" value="110" />
         </counts>
       </usages-collector>
@@ -201,24 +190,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Stronghold/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
-              <caret line="120" column="46" selection-start-line="120" selection-start-column="46" selection-end-line="120" selection-end-column="46" />
+            <state relative-caret-position="190">
+              <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#5039#5202#0" expanded="true" />
-                <element signature="e#5201#5202#0" expanded="true" />
-                <element signature="e#6370#7160#0" expanded="true" />
-                <element signature="e#7159#7160#0" expanded="true" />
+                <marker date="1562759782576" expanded="false" signature="5461:6153" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Stronghold/GameObjects/NaturalObject/Chestnut.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="8" column="23" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -228,29 +205,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="package.json" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>remove</find>
-      <find>rotate</find>
-      <find>print</find>
-      <find>mouse</find>
-      <find>camera</find>
-      <find>anin</find>
-      <find>TILE</find>
-      <find>ini</find>
-      <find>CAMERA_INITIAL_DISTANCE</find>
-      <find>json</find>
-      <find>map</find>
-      <find>gameMap</find>
-      <find>resources</find>
-      <find>bui</find>
-      <find>earth</find>
-      <find>ear</find>
-      <find>setrotate</find>
       <find>vassa</find>
       <find>myBuildings</find>
       <find>world</find>
@@ -264,6 +225,23 @@
       <find>startAnimation</find>
       <find>add</find>
       <find>anima</find>
+      <find>addBuilding</find>
+      <find>GAME</find>
+      <find>scene</find>
+      <find>render</find>
+      <find>root</find>
+      <find>Game</find>
+      <find>setcamer</find>
+      <find>setcam</find>
+      <find>Node</find>
+      <find>cas</find>
+      <find>constructionMenu</find>
+      <find>map</find>
+      <find>3d</find>
+      <find>REs</find>
+      <find>back</find>
+      <find>earthObjects</find>
+      <find>gameObjectAnimations</find>
     </findStrings>
     <replaceStrings>
       <replace>intersects</replace>
@@ -276,11 +254,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Stronghold/MaterialExample.java" />
-        <option value="$PROJECT_DIR$/src/Stronghold/Test3D.java" />
-        <option value="$PROJECT_DIR$/src/Stronghold/Map/RotationTransformExample.java" />
-        <option value="$PROJECT_DIR$/src/Stronghold/RotateExample.java" />
-        <option value="$PROJECT_DIR$/out/production/Stronghold/Stronghold/index.html" />
         <option value="$PROJECT_DIR$/src/Stronghold/Testic.java" />
         <option value="$PROJECT_DIR$/src/Stronghold/Wumpus.java" />
         <option value="$PROJECT_DIR$/src/Stronghold/GameG.java" />
@@ -290,14 +263,12 @@
         <option value="$PROJECT_DIR$/src/Stronghold/Building/Workshop.java" />
         <option value="$PROJECT_DIR$/src/Stronghold/Building/Barracks.java" />
         <option value="$PROJECT_DIR$/src/Stronghold/Building/Farm.java" />
-        <option value="$PROJECT_DIR$/JsonFiles/building_settings.json" />
         <option value="$PROJECT_DIR$/src/Thread/Value.java" />
         <option value="$PROJECT_DIR$/src/Thread/IncrThread.java" />
         <option value="$PROJECT_DIR$/src/Thread/DThread.java" />
         <option value="$PROJECT_DIR$/src/Thread/Main.java" />
         <option value="$PROJECT_DIR$/src/Thread/Table.java" />
         <option value="$PROJECT_DIR$/src/Thread/TestSynchronization2.java" />
-        <option value="$PROJECT_DIR$/src/Test/MaterialExample.java" />
         <option value="$PROJECT_DIR$/src/Test/Sprite.java" />
         <option value="$PROJECT_DIR$/src/Test/RotateExample.java" />
         <option value="$PROJECT_DIR$/Assets/index.html" />
@@ -310,22 +281,29 @@
         <option value="$PROJECT_DIR$/src/Stronghold/Map/Tile/DesertTile.java" />
         <option value="$PROJECT_DIR$/src/Stronghold/Map/Tile/GrassTile.java" />
         <option value="$PROJECT_DIR$/src/Stronghold/Map/GameMap.java" />
-        <option value="$PROJECT_DIR$/JsonFiles/Maps/sample.json" />
         <option value="$PROJECT_DIR$/JsonFiles/human_settings.json" />
         <option value="$PROJECT_DIR$/src/Stronghold/Human/Vassal.java" />
         <option value="$PROJECT_DIR$/src/Stronghold/Human/Worker.java" />
-        <option value="$PROJECT_DIR$/src/Stronghold/GameGui.java" />
         <option value="$PROJECT_DIR$/src/Stronghold/Human/Soldier.java" />
         <option value="$PROJECT_DIR$/src/Stronghold/Human/Archer.java" />
         <option value="$PROJECT_DIR$/src/Stronghold/Human/Human.java" />
         <option value="$PROJECT_DIR$/src/Stronghold/Human/Swordsman.java" />
         <option value="$PROJECT_DIR$/src/GameSettings.java" />
-        <option value="$PROJECT_DIR$/JsonFiles/resource_settings.json" />
         <option value="$PROJECT_DIR$/src/Stronghold/ResourceManager.java" />
-        <option value="$PROJECT_DIR$/JsonFiles/object_settings.json" />
         <option value="$PROJECT_DIR$/src/Stronghold/GameObjects/GameAnimation.java" />
         <option value="$PROJECT_DIR$/src/Stronghold/GameObjects/NaturalObject/Tree.java" />
         <option value="$PROJECT_DIR$/src/Stronghold/GameObjects/NaturalObject/Chestnut.java" />
+        <option value="$PROJECT_DIR$/src/package.json" />
+        <option value="$PROJECT_DIR$/src/ScreenTester/Main.java" />
+        <option value="$PROJECT_DIR$/JsonFiles/object_settings.json" />
+        <option value="$PROJECT_DIR$/JsonFiles/Maps/sample.json" />
+        <option value="$PROJECT_DIR$/JsonFiles/building_settings.json" />
+        <option value="$PROJECT_DIR$/src/Test/Test.java" />
+        <option value="$PROJECT_DIR$/src/Test/JavaFxHelloWorld.java" />
+        <option value="$PROJECT_DIR$/src/Stronghold/GameGui.java" />
+        <option value="$PROJECT_DIR$/src/Test/MaterialExample.java" />
+        <option value="$PROJECT_DIR$/src/Test/HelloWorld.java" />
+        <option value="$PROJECT_DIR$/JsonFiles/resource_settings.json" />
         <option value="$PROJECT_DIR$/src/Stronghold/Game.java" />
       </list>
     </option>
@@ -343,9 +321,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="953" />
+    <option name="x" value="683" />
+    <option name="y" value="75" />
     <option name="width" value="974" />
-    <option name="height" value="1087" />
+    <option name="height" value="874" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -353,7 +332,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -364,11 +344,6 @@
             <path>
               <item name="Stronghold" type="b2602c69:ProjectViewProjectNode" />
               <item name="Stronghold" type="462c0819:PsiDirectoryNode" />
-              <item name="JsonFiles" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Stronghold" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Stronghold" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -376,45 +351,21 @@
               <item name="Stronghold" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Stronghold" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Stronghold" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Stronghold" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Stronghold" type="462c0819:PsiDirectoryNode" />
-              <item name="GameObjects" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Stronghold" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Stronghold" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Stronghold" type="462c0819:PsiDirectoryNode" />
-              <item name="GameObjects" type="462c0819:PsiDirectoryNode" />
-              <item name="Human" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Stronghold" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Stronghold" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Stronghold" type="462c0819:PsiDirectoryNode" />
-              <item name="GameObjects" type="462c0819:PsiDirectoryNode" />
-              <item name="NaturalObject" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/OMEN/Documents/IntellJ/Stronghold/src/Stronghold/MaterialExample.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562668082889" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562760456808" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Maktab" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -455,12 +406,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Thread.Main" />
+    <configuration name="HelloWorld" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Test.HelloWorld" />
       <module name="Stronghold" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Thread.*" />
+          <option name="PATTERN" value="Test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -468,12 +419,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestSynchronization1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Thread.TestSynchronization1" />
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ScreenTester.Main" />
       <module name="Stronghold" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Thread.*" />
+          <option name="PATTERN" value="ScreenTester.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -481,12 +432,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestSynchronization2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Thread.TestSynchronization2" />
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Test.Test" />
       <module name="Stronghold" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Thread.*" />
+          <option name="PATTERN" value="Test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -499,18 +450,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.GameGui" />
-      <item itemvalue="Application.Main (1)" />
-      <item itemvalue="Application.TestSynchronization1" />
-      <item itemvalue="Application.TestSynchronization2" />
       <item itemvalue="JavaScript Debug.index.html" />
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.Test" />
+      <item itemvalue="Application.HelloWorld" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.GameGui" />
+        <item itemvalue="Application.HelloWorld" />
+        <item itemvalue="Application.Test" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JavaScript Debug.index.html" />
-        <item itemvalue="Application.TestSynchronization2" />
-        <item itemvalue="Application.TestSynchronization1" />
-        <item itemvalue="Application.Main (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -547,18 +498,20 @@
       <workItem from="1562405554958" duration="2963000" />
       <workItem from="1562413293487" duration="17023000" />
       <workItem from="1562506643687" duration="16000" />
-      <workItem from="1562578568657" duration="19393000" />
+      <workItem from="1562578568657" duration="32434000" />
+      <workItem from="1562696993247" duration="1067000" />
+      <workItem from="1562732608832" duration="18460000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="246072000" />
+    <option name="totallyTimeSpent" value="278640000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17643923" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15724947" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -567,8 +520,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32848233" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.25779626" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3981289" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3898129" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3976915" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -576,7 +529,7 @@
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.26507276" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32952183" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.2827443" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.28170478" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -585,7 +538,7 @@
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Maven Projects" order="7" weight="0.32995737" />
-      <window_info anchor="right" id="Coverage" order="8" side_tool="true" weight="0.1119403" />
+      <window_info anchor="right" id="Coverage" order="8" side_tool="true" weight="0.054371003" />
       <window_info anchor="right" id="Database" order="9" weight="0.32995737" />
     </layout>
   </component>
@@ -596,56 +549,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Stronghold/GameG.java" />
-    <entry file="file://$PROJECT_DIR$/src/Stronghold/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="66" selection-start-line="10" selection-start-column="66" selection-end-line="10" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Stronghold/GameObjects/Building/Workshop.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Stronghold/GameObjects/Building/Farm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Thread/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Thread/Value.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Thread/IncrThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="24" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Thread/TestSynchronization2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-26">
-          <caret line="65" column="4" selection-start-line="65" selection-start-column="4" selection-end-line="65" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Thread/DThread.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
@@ -660,24 +563,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Test/MaterialExample.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="665">
-          <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Test/TestGui.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Test/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -728,13 +617,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/image004.jpg" />
-    <entry file="file://$PROJECT_DIR$/JsonFiles/building_settings.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="159" column="4" lean-forward="true" selection-start-line="159" selection-start-column="4" selection-end-line="159" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JsonFiles/allowed_json_files.json" />
     <entry file="file://$PROJECT_DIR$/JsonFiles/game_settings.json">
       <provider selected="true" editor-type-id="text-editor">
@@ -801,13 +683,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JsonFiles/Maps/sample.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Stronghold/GameObjects/Building/Castle.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
@@ -822,13 +697,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Stronghold/Human/Soldier.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Stronghold/Human/Soldier.java" />
     <entry file="file://$PROJECT_DIR$/src/Stronghold/GameObjects/Human/Archer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -850,23 +719,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Stronghold/GameGui.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="654">
-          <caret line="114" lean-forward="true" selection-start-line="112" selection-end-line="114" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GameSettings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameSettings.java" />
     <entry file="file://$PROJECT_DIR$/src/Stronghold/GameObjects/Building/Building.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="172">
@@ -894,34 +747,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JsonFiles/resource_settings.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="45" column="5" lean-forward="true" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JsonFiles/object_settings.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Stronghold/GameObjects/GameAnimation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
           <caret line="21" column="68" selection-start-line="21" selection-start-column="68" selection-end-line="21" selection-end-column="68" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Stronghold/ResourceManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="62" selection-start-line="62" selection-end-line="62" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -935,16 +764,142 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Stronghold/Game.java">
+    <entry file="file://$PROJECT_DIR$/src/package.json" />
+    <entry file="file://$PROJECT_DIR$/src/ScreenTester/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="120" column="46" selection-start-line="120" selection-start-column="46" selection-end-line="120" selection-end-column="46" />
+        <state>
+          <caret column="21" selection-start-column="21" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5039#5202#0" expanded="true" />
-            <element signature="e#5201#5202#0" expanded="true" />
-            <element signature="e#6370#7160#0" expanded="true" />
-            <element signature="e#7159#7160#0" expanded="true" />
+            <element signature="e#356#357#0" expanded="true" />
+            <element signature="e#384#385#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JsonFiles/object_settings.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="29" lean-forward="true" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JsonFiles/Maps/sample.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="4" lean-forward="true" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_212/javafx-src.zip!/javafx/scene/PerspectiveCamera.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="83" column="13" selection-start-line="83" selection-start-column="13" selection-end-line="83" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_212/src.zip!/java/lang/Thread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="747" selection-start-line="747" selection-end-line="747" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_212/jre/lib/rt.jar!/sun/launcher/LauncherHelper.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="576" selection-start-line="576" selection-end-line="576" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Test/JavaFxHelloWorld.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-183">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#664#698#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_212/javafx-src.zip!/javafx/scene/Scene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="233" column="11" selection-start-line="233" selection-start-column="11" selection-end-line="233" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JsonFiles/resource_settings.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="58" lean-forward="true" selection-start-line="12" selection-start-column="58" selection-end-line="12" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Stronghold/ResourceManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="107" selection-start-line="107" selection-end-line="107" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JsonFiles/building_settings.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="501">
+          <caret line="103" column="10" selection-start-line="103" selection-start-column="10" selection-end-line="103" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Test/HelloWorld.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#251#252#0" expanded="true" />
+            <element signature="e#291#292#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Stronghold/Gui/Buttons/MainMenuButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="653">
+          <caret line="42" selection-start-line="42" selection-end-line="46" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Stronghold/GameGui.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="37" column="52" lean-forward="true" selection-start-line="37" selection-start-column="52" selection-end-line="37" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Test/MaterialExample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Stronghold/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1562759782576" expanded="false" signature="5461:6153" ph="..." />
           </folding>
         </state>
       </provider>
