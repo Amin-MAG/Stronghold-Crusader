@@ -42,7 +42,7 @@ public class Game  {
     // Main Objects
 
     final private Group root = new Group();
-    final private Xform world = new Xform();
+    final public static Xform world = new Xform();
 
 
     // Camera
@@ -57,10 +57,9 @@ public class Game  {
     private static double CAMERA_INITIAL_DISTANCE = -2000;
     private static final double CAMERA_INITIAL_X_ANGLE = 55;
 //    private static final double CAMERA_INITIAL_X_ANGLE = 55;
-    private static final double CAMERA_INITIAL_Y_ANGLE = 135;
+    private static final double CAMERA_INITIAL_Y_ANGLE = 180;
     private static final double CAMERA_NEAR_CLIP = 0.5;
     private static final double CAMERA_FAR_CLIP = 10000.0;
-
 
     // Mouse
 
@@ -97,19 +96,17 @@ public class Game  {
         ResourceManager.initialization();
         gameMap = new GameMap("MAP-SAMPLE");
 
-
-
         Map jsonMap = ResourceManager.getJson("JSON-GAME");
 
         resources = (Map) jsonMap.get("initial_resources");
         resourceRate = (Map) jsonMap.get("initial_resource_rate");
-
 
         myBuildings = new HashMap<>();
         myBuildings.put("CASTLE", null);
         myBuildings.put("FARM", null);
         myBuildings.put("BARRACKS", null);
         myBuildings.put("WORKSHOP", null);
+
 
 //        addBuilding("CASTLE", -500, 0);
 //
@@ -155,14 +152,74 @@ public class Game  {
 
         // Game Menu
 
-        Group concstructionMenu = new Group();
-        createRect(concstructionMenu, 1920,282, 0, 1080-282, "GAME-MENU");
+        Group constructionMenu = new Group();
+        Group farmButton = new Group();
+        Group barracksButton = new Group();
+        Group workshopButton = new Group();
+        String[] possibleBuildings = new String[] {
+                "BUILDING-FARM",
+                "BUILDING-BARRACKS",
+                "BUILDING-WORKSHOP"
+        };
+
+        createRect(constructionMenu, 1925,282, -3, 801, "GAME-MENU");
+        createRect(farmButton, 170, 150, 500, 930, "BUILDING-FARM");
+        createRect(barracksButton, 250, 160, 680, 920, "BUILDING-BARRACKS");
+        createRect(workshopButton, 91, 84, 930, 940, "BUILDING-WORKSHOP");
+
+        constructionMenu.getChildren().add(farmButton);
+        constructionMenu.getChildren().add(barracksButton);
+        constructionMenu.getChildren().add(workshopButton);
+
+
+//        createRect(constructionMenu, 1925,282, 958, 940, "GAME-MENU");
+//        createRect(constructionMenu, 170, 150, 790, 990, "BUILDING-FARM");
+//        createRect(constructionMenu, 250, 160, 575, 990, "BUILDING-BARRACKS");
+//        createRect(constructionMenu, 91, 84, 930, 970, "BUILDING-WORKSHOP");
+
+        boolean buildingIsSelected = false;
+
+
+        constructionMenu.getChildren().get(1).addEventHandler(MouseEvent.MOUSE_CLICKED, new GameController("FARM"));
+        constructionMenu.getChildren().get(2).addEventHandler(MouseEvent.MOUSE_CLICKED, new GameController("BARRACKS"));
+        constructionMenu.getChildren().get(3).addEventHandler(MouseEvent.MOUSE_CLICKED, new GameController("WORKSHOP"));
+
+//        constructionMenu.getChildren().get(1).addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
+//            @Override
+//            public void handle(MouseEvent event) {
+//
+////                Farm newFarm = new Farm(new int[]{(int)event.getX(), (int)event.getY()}, "Amin");
+////                newFarm.xform.setRotateY(-45);
+////                world.getChildren().addAll(newFarm.xform);
+////                newFarm.xform.setTranslate(event.getX(), 0,event.getY());
+//
+//            }
+//        });
+//
+//
+//        constructionMenu.getChildren().get(2).addEventHandler(MouseEvent.MOUSE_DRAGGED, new EventHandler<MouseEvent>() {
+//            @Override
+//            public void handle(MouseEvent event) {
+//
+////                addBuilding(event, "BARRACKS");
+//
+//            }
+//        });
+//
+//        constructionMenu.getChildren().get(3).addEventHandler(MouseEvent.MOUSE_DRAGGED, new EventHandler<MouseEvent>() {
+//            @Override
+//            public void handle(MouseEvent event) {
+//
+////                addBuilding(event, "WORKSHOP");
+//
+//            }
+//        });
 
 
         // Adding to Root Group
 
         root.getChildren().add(subScene);
-        root.getChildren().add(concstructionMenu);
+        root.getChildren().add(constructionMenu);
 
 
         // Create Scene with group Root
@@ -170,7 +227,7 @@ public class Game  {
         Scene gameMenu = new Scene(root, 1280, 182);
 
 
-        // Controller
+        // GameController
 
         handleMouse(gameMenu, world);
 
@@ -179,26 +236,52 @@ public class Game  {
 
         primaryStage.setTitle("Game");
         primaryStage.setScene(gameMenu);
+        primaryStage.setFullScreen(true);
+        primaryStage.show();
 
 
         // Initial Builds
 
-        buildCamera();
         buildEarth();
+
+//        buildAxes();
+
+        buildCamera();
 
 
         // Testing Objects And Animations
 
 
-        addBuilding("WORKSHOP", 0, 100);
-        addBuilding("BARRACKS", 0, 300);
-        addBuilding("FARM", 750, 0);
-        addBuilding("CASTLE", -500, 0);
-        addHuman("VASSAL-DOWN", -300, 0);
-        addHuman("SWORDSMAN-DOWN", 600, 600);
-        addHuman("SWORDSMAN-DOWN", -500, 500);
+//        buildBuilding("WORKSHOP", 0, 0);
+        buildBuilding("WORKSHOP", 0, 100);
+        buildBuilding("WORKSHOP", 0, -100);
+        buildBuilding("WORKSHOP", 100, 0);
+//        buildBuilding("WORKSHOP", -1s00, 0);
+//        buildBuilding("WORKSHOP", -100, -100);
+//        buildBuilding("WORKSHOP", -100, 100);
+//        buildBuilding("WORKSHOP", 100, -100);
+//        buildBuilding("WORKSHOP", 100, 100);
+//
+//        buildBuilding("WORKSHOP", 600, 600);
+//
+//
+//        buildBuilding("WORKSHOP", 0, 500);
+//        buildBuilding("BARRACKS", 0, 300);
+//        buildBuilding("FARM", 750, 0);
+//        buildBuilding("CASTLE", -500, 0);
+//
+//
+//        addHuman("VASSAL-DOWN", -700, 0);
+//        addHuman("SWORDSMAN-DOWN", 600, 600);
+//        addHuman("SWORDSMAN-DOWN", -500, 500);
+//
+//        addAnimation("TREE-CHESTNUT", 300,200);
 
-        addAnimation("TREE-CHESTNUT", 10,0);
+//        for (int i = 0; i < 40; i++) {
+//            for (int j = 0; j < 40; j++) {
+//            }
+//        }
+
         startObjectAnimation();
 
 
@@ -218,15 +301,13 @@ public class Game  {
 //            @Override
 //            public void handle(WorkerStateEvent event) {
 //                removeBuilding(myBuildings.get("CASTLE").get(0));
-//            }
+//            }+
 //        });
 //        new Thread(sleeper).start();
 //        myBuildings.put("CASTLE", null);
 //        System.out.println(world.getChildren());
 
 
-
-        primaryStage.show();
 
     }
 
@@ -293,6 +374,10 @@ public class Game  {
         // Z-Axis
         createRect3D(axisGroup, 20,AXIS_LENGTH,20,0,0,0,Color.DARKBLUE, null, false);
 
+//        axisGroup.setRotateY(-45);
+//        createRect3D(world,20,20,20000,0,0,0,Color.PURPLE,null,false);
+//        createRect3D(world,20000,20,20,0,0,0,Color.YELLOW,null,false);
+
         world.getChildren().addAll(axisGroup);
 
     }
@@ -354,7 +439,24 @@ public class Game  {
     }
 
 
-    public void addBuilding(String buildingName, int x, int y) {
+    public void addBuilding(MouseEvent e, Building building, String name) {
+
+        switch (name) {
+            case "FARM":
+                break;
+            case "WORKSHOP":
+                break;
+            case "BARRACKS":
+                break;
+            default:
+                break;
+        }
+
+
+
+    }
+
+    public void buildBuilding(String buildingName, int x, int y) {
 
         switch (buildingName) {
             case "CASTLE":
@@ -364,6 +466,8 @@ public class Game  {
                     newCastle.xform.addEventFilter(MouseEvent.MOUSE_CLICKED, e -> {
 
                         System.out.println("Castle Has Been Selected !");
+//                        System.out.println(e.getSceneX() + " " +  e.getSceneY());
+//                        System.out.println(newCastle.xform.getTranslateX() + " " + newCastle.xform.getTranslateY() + " " +  newCastle.xform.getTranslateZ());
 
                     });
                     world.getChildren().addAll(newCastle.xform);
@@ -375,7 +479,7 @@ public class Game  {
                 break;
             case "FARM":
                 Farm newFarm = new Farm(new int[]{x, y}, "Amin");
-                newFarm.xform.setRotateY(-45);
+//                newFarm.xform.setRotateY(-45);
                 world.getChildren().addAll(newFarm.xform);
                 ArrayList<Building> farmList = new ArrayList<>();
                 if (myBuildings.get("FARM") == null) {
@@ -392,8 +496,12 @@ public class Game  {
                 }
                 break;
             case "WORKSHOP":
+//                Xform test = new Xform();
+//                createRect3D(test,50,50,50,x,0,y,Color.BLUE,null,false);
+//                test.setRotateY(-45);
+//                world.getChildren().add(test);
                 Workshop newWorkshop = new Workshop(new int[]{x, y}, "Amin");
-                newWorkshop.xform.setRotateY(-45);
+//                newWorkshop.xform.setRotateY(-45);
                 world.getChildren().addAll(newWorkshop.xform);
                 ArrayList<Building> workshopList = new ArrayList<>();
                 if (myBuildings.get("WORKSHOP") == null) {
@@ -476,6 +584,22 @@ public class Game  {
 
 
     public static void createRect(Group group, double width, double height, double x, double y, String imageName) {
+
+
+//        Box BoxItem = new Box();
+//        final PhongMaterial myMaterial = new PhongMaterial();
+//
+//        BoxItem.setTranslateX(x);
+//        BoxItem.setTranslateY(y);
+//
+//        BoxItem.setWidth(width);
+//        BoxItem.setDepth(0);
+//        BoxItem.setHeight(height);
+//
+//        myMaterial.setDiffuseMap(ResourceManager.getImage(imageName));
+//        BoxItem.setMaterial(myMaterial);
+//
+//        group.getChildren().add(BoxItem);
 
 
         VBox vBoxItem = new VBox();
@@ -578,6 +702,112 @@ public class Game  {
 //
 //        });
 
+        scene.addEventFilter(MouseEvent.ANY, new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+
+                //404
+
+                if (event.isPrimaryButtonDown()){
+
+//                    System.out.println(event.getX() + " " + event.getY());
+//                    Game.earthGroup.debug();
+                    Game.earthGroup.reset();
+
+
+                }
+
+
+//                System.out.println(earthGroup.rx + " " + earthGroup.ry + " " + earthGroup.rz);
+//                System.out.println(earthGroup.getTranslateX() + " " + earthGroup.getTranslateY() + " " + earthGroup.getTranslateZ());
+//                System.out.println(world.getChildren().get(0).getTranslateX() + " " + world.ip + " " + world.p);
+//
+//                if (event.isPrimaryButtonDown()) {
+//
+//
+//                    System.out.println(event.getSceneX() + " " +  event.getSceneY());
+//                    System.out.println(GameController.newFarm.xform.getTranslateX() + " " + GameController.newFarm.xform.getTranslateY() + " " +  GameController.newFarm.xform.getTranslateZ());
+//
+//
+//                }
+
+                if (event.isPrimaryButtonDown()){
+
+//                    System.out.println(event.getX()  + " " +  event.getY());
+
+                }
+
+                if (GameController.buildingFarmIsSelected) {
+
+//                    System.out.println("change");
+//                    System.out.println("Location: " + event.getX() + "   " + event.getY());
+//                    GameController.newFarm.xform.setTranslate(event.getY()-960,0 ,event.getX()-445);
+
+                    double xPos = event.getX()*1.25-1600;
+                    double yPos = 1000;
+                    xPos += -550;
+                    yPos += event.getY()*1.5+300;
+
+                    xPos += 380;
+                    yPos += -950;
+
+                    GameController.newFarm.xform.setTranslate(xPos, 0, yPos);
+
+//                    GameController.newFarm.xform.setTranslate(event.getX()*1.1-1600,0 , 1000);
+//                    GameController.newFarm.xform.setTranslate(-550,0 ,event.getY()*1.5+300);
+//                    GameController.newFarm.xform.setTranslate(-550,0 ,event.getY()*1.5+300);
+//                    GameController.newFarm.xform.setTranslate(-event.getY()*1.5-300 + (-1.2*event.getX()),0 ,event.getY()*1.5-650 + (-1.2*event.getX()));
+//                    GameController.newFarm.xform.setTranslate((event.getX()-event.getY())*1.5-1000 + (-1.2*event.getX()),0 ,event.getY()*1.5-2500 + (+2.2*event.getX()));
+//                    GameController.newFarm.xform.setTranslate(event.getX()*Math.sin(Math.PI/3)-1900 - event.getY()*4+700 ,0 ,event.getX()*Math.sin(Math.PI/3)-430 + event.getX()*Math.sin(Math.PI/3)-430);
+//                    GameController.newFarm.xform.setTranslate(eve);
+
+                    if (event.isPrimaryButtonDown()) {
+
+                        GameController.buildingFarmIsSelected = false;
+
+                    }
+
+                }
+
+
+                if (GameController.buildingBarracksIsSelected) {
+
+                    double xPos = event.getX()*1.25-1600;
+                    double yPos = 1000;
+                    xPos += -550;
+                    yPos += event.getY()*1.5+300;
+
+                    xPos += 150;
+                    yPos += -950;
+
+                    GameController.newBarracks.xform.setTranslate(xPos, 0, yPos);
+
+                    if (event.isPrimaryButtonDown()) GameController.buildingBarracksIsSelected = false;
+
+                }
+
+
+                if (GameController.buildingWorkshopIsSelected) {
+
+                    double xPos = event.getX()*1.25-1600;
+                    double yPos = 1000;
+                    xPos += -550;
+                    yPos += event.getY()*1.5+300;
+
+                    xPos += -20;
+                    yPos += -965;
+
+                    GameController.newWorkshop.xform.setTranslate(xPos, 0, yPos);
+
+                    if (event.isPrimaryButtonDown()) GameController.buildingWorkshopIsSelected = false;
+
+                }
+
+
+
+            }
+        });
+
 
         scene.setOnMousePressed(new EventHandler<MouseEvent>() {
 
@@ -586,8 +816,6 @@ public class Game  {
 
                 mousePosX = me.getSceneX();
                 mousePosY = me.getSceneY();
-//                System.out.println(mousePosX + " " + mousePosY);
-//                System.out.println();
 
             }
 
@@ -615,8 +843,8 @@ public class Game  {
                     cameraXform.rx.setAngle(cameraXform.rx.getAngle() + mouseDeltaY * 4);
 
                 } else if (me.isPrimaryButtonDown()) {
-//                if (me.isPrimaryButtonDown()) {
 
+//                if (me.isPrimaryButtonDown()) {
 //                    double oldXAngle = cameraXform.ry.getAngle();
 //                    double oldYAngle = cameraXform.rx.getAngle();
 

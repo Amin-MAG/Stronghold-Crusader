@@ -35,7 +35,7 @@ public abstract class Building {
         };
 
 
-        Game.createRect3D(xform, size[0],0, size[1],location[0],size[2], location[1],null,imageName,true);
+        Game.createRect3D(xform, size[0],0, size[1],location[0],size[2], -location[1],null,imageName,true);
 
 
         // Here We Assign Values !!!

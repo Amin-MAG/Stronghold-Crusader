@@ -1,7 +1,6 @@
 package Stronghold;
 
 import Stronghold.Gui.Buttons.MainMenuButton;
-import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -78,16 +77,16 @@ public class GameGui extends Application {
         mainBox.setBackground(ResourceManager.getBackground("GUI-BACKGROUND"));
 
 
-        primaryStage.setFullScreenExitHint("");
-        primaryStage.setFullScreen(true);
-        primaryStage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH);
+//        primaryStage.setFullScreenExitHint("");
+//        primaryStage.setFullScreen(true);
+//        primaryStage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH);
 
         primaryStage.fullScreenProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
 
-                if(newValue != null)
-                    primaryStage.setFullScreen(true);
+                if(newValue != null) primaryStage.setFullScreen(true);
+
             }
 
         });
@@ -110,6 +109,7 @@ public class GameGui extends Application {
 
 
         // Should Be Removed
+
         new Game("sample").render(primaryStage);
         theMenuMusic.stop();
 
