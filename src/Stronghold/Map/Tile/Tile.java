@@ -24,7 +24,8 @@ public abstract class Tile {
 
     public void buildTile() {
 
-        Game.createRect3D(xform, 350,0, 350,location[0],0 , location[1],null,imageAddress ,false);
+        Game.createRect3D(xform, 150,0, 150,location[0],0 , location[1],null,imageAddress ,false);
+//        Game.createRect3D(xform, 350,0, 350,location[0],0 , location[1],null,imageAddress ,false);
 
     }
 

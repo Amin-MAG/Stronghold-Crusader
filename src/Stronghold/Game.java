@@ -90,6 +90,10 @@ public class Game  {
     private final Xform humanXfrom = new Xform();
 
 
+    // Mouse Position on Earth
+    public static double[] mousePosOnEarth;
+
+
     Game(String mapName) {
 
         // Should be Commented
@@ -108,8 +112,8 @@ public class Game  {
         myBuildings.put("WORKSHOP", null);
 
 
-//        addBuilding("CASTLE", -500, 0);
-//
+//        buildBuilding("CASTLE", -500, 0);
+
 //        addHuman("VASSAL-DOWN", -300, 0);
 //        addHuman("SWORDSMAN-DOWN", 600, 600);
 //        addHuman("SWORDSMAN-DOWN", -500, 500);
@@ -236,7 +240,7 @@ public class Game  {
 
         primaryStage.setTitle("Game");
         primaryStage.setScene(gameMenu);
-        primaryStage.setFullScreen(true);
+//        primaryStage.setFullScreen(true);
         primaryStage.show();
 
 
@@ -244,7 +248,7 @@ public class Game  {
 
         buildEarth();
 
-//        buildAxes();
+        buildAxes();
 
         buildCamera();
 
@@ -252,30 +256,29 @@ public class Game  {
         // Testing Objects And Animations
 
 
-//        buildBuilding("WORKSHOP", 0, 0);
+        addHuman("VASSAL-DOWN", -700, 0);
+        addHuman("SWORDSMAN-DOWN", 600, 600);
+        addHuman("SWORDSMAN-DOWN", -500, 500);
+
+        world.getChildren().addAll(humanXfrom);
+
+
         buildBuilding("WORKSHOP", 0, 100);
         buildBuilding("WORKSHOP", 0, -100);
         buildBuilding("WORKSHOP", 100, 0);
-//        buildBuilding("WORKSHOP", -1s00, 0);
-//        buildBuilding("WORKSHOP", -100, -100);
-//        buildBuilding("WORKSHOP", -100, 100);
-//        buildBuilding("WORKSHOP", 100, -100);
-//        buildBuilding("WORKSHOP", 100, 100);
-//
-//        buildBuilding("WORKSHOP", 600, 600);
-//
-//
-//        buildBuilding("WORKSHOP", 0, 500);
-//        buildBuilding("BARRACKS", 0, 300);
-//        buildBuilding("FARM", 750, 0);
-//        buildBuilding("CASTLE", -500, 0);
-//
-//
-//        addHuman("VASSAL-DOWN", -700, 0);
-//        addHuman("SWORDSMAN-DOWN", 600, 600);
-//        addHuman("SWORDSMAN-DOWN", -500, 500);
-//
-//        addAnimation("TREE-CHESTNUT", 300,200);
+        buildBuilding("WORKSHOP", -100, 0);
+        buildBuilding("WORKSHOP", -100, -100);
+        buildBuilding("WORKSHOP", -100, 100);
+        buildBuilding("WORKSHOP", 100, -100);
+        buildBuilding("WORKSHOP", 100, 100);
+        buildBuilding("WORKSHOP", 600, 600);
+        buildBuilding("WORKSHOP", 0, 500);
+        buildBuilding("BARRACKS", 0, 300);
+        buildBuilding("FARM", 750, 0);
+        buildBuilding("CASTLE", -500, 0);
+
+
+        addAnimation("TREE-CHESTNUT", 300,200);
 
 //        for (int i = 0; i < 40; i++) {
 //            for (int j = 0; j < 40; j++) {
@@ -284,8 +287,6 @@ public class Game  {
 
         startObjectAnimation();
 
-
-        world.getChildren().addAll(humanXfrom);
 
 
 //        Task<Void> sleeper = new Task<Void>() {
@@ -335,7 +336,6 @@ public class Game  {
 
         }.start();
 
-        earthObjects.setRotateY(-45);
         earthGroup.getChildren().add(earthObjects);
 
     }
@@ -420,7 +420,6 @@ public class Game  {
                 break;
         }
 
-        humanXfrom.setRotateY(-45);
     }
 
     public void addAnimation(String animationName, int x, int y) {
@@ -462,10 +461,11 @@ public class Game  {
             case "CASTLE":
                 if (!haveCastle) {
                     Castle newCastle = new Castle(new int[]{x, y}, "Amin");
-                    newCastle.xform.setRotateY(-45);
+//                    newCastle.xform.setRotateY(-45);
                     newCastle.xform.addEventFilter(MouseEvent.MOUSE_CLICKED, e -> {
 
                         System.out.println("Castle Has Been Selected !");
+                        System.out.println(newCastle.xform.getChildren().get(0).getTranslateX() + " " + newCastle.xform.getChildren().get(0).getTranslateY() + " " + newCastle.xform.getChildren().get(0).getTranslateZ());
 //                        System.out.println(e.getSceneX() + " " +  e.getSceneY());
 //                        System.out.println(newCastle.xform.getTranslateX() + " " + newCastle.xform.getTranslateY() + " " +  newCastle.xform.getTranslateZ());
 
@@ -521,7 +521,7 @@ public class Game  {
                 if (myBuildings.get("BARRACKS") == null) {
 
                     Barracks newBarracks = new Barracks(new int[]{x, y}, "Amin");
-                    newBarracks.xform.setRotateY(-45);
+//                    newBarracks.xform.setRotateY(-45);
                     world.getChildren().addAll(newBarracks.xform);
                     ArrayList<Building> barracksList = new ArrayList<>();
                     barracksList.add(newBarracks);
@@ -711,9 +711,18 @@ public class Game  {
                 if (event.isPrimaryButtonDown()){
 
 //                    System.out.println(event.getX() + " " + event.getY());
-//                    Game.earthGroup.debug();
-                    Game.earthGroup.reset();
 
+//                    for (int i = 0; i < earthGroup.getChildren().size(); i++) {
+//
+//                        System.out.println(i + "- " + ((Group)earthGroup.getChildren().get(i)).getChildren().get(0).getTranslateX() + " " + ((Group)earthGroup.getChildren().get(i)).getChildren().get(0).getTranslateY() + " " + ((Group)earthGroup.getChildren().get(i)).getChildren().get(0).getTranslateZ() );
+//
+//                    }
+
+//                    System.out.println(earthGroup.getChildren().stream().map(x->{
+//
+//                        ((Group)x).getChildren().get()
+//
+//                    }));
 
                 }
 
@@ -733,9 +742,14 @@ public class Game  {
 
                 if (event.isPrimaryButtonDown()){
 
-//                    System.out.println(event.getX()  + " " +  event.getY());
+//                    System.out.println(camera.getTranslateX() + " " + camera.getTranslateY() + " " + camera.getTranslateZ());
+
+//                    System.out.println(ear);
 
                 }
+
+
+                double cameraSpecialDis = camera.getTranslateZ()+2000;
 
                 if (GameController.buildingFarmIsSelected) {
 
@@ -749,7 +763,7 @@ public class Game  {
                     yPos += event.getY()*1.5+300;
 
                     xPos += 380;
-                    yPos += -950;
+                    yPos += -950 - cameraSpecialDis*1.3;
 
                     GameController.newFarm.xform.setTranslate(xPos, 0, yPos);
 
@@ -778,7 +792,7 @@ public class Game  {
                     yPos += event.getY()*1.5+300;
 
                     xPos += 150;
-                    yPos += -950;
+                    yPos += -950 - cameraSpecialDis*1.3;
 
                     GameController.newBarracks.xform.setTranslate(xPos, 0, yPos);
 
@@ -795,7 +809,7 @@ public class Game  {
                     yPos += event.getY()*1.5+300;
 
                     xPos += -20;
-                    yPos += -965;
+                    yPos += -965 - cameraSpecialDis*1.3;
 
                     GameController.newWorkshop.xform.setTranslate(xPos, 0, yPos);
 
@@ -855,8 +869,7 @@ public class Game  {
                     buildCamera();
                     cameraXform2.t.setX(cameraXform2.t.getX() + mouseDeltaX * MOUSE_SPEED * TRACK_SPEED);
                     cameraXform2.t.setY(cameraXform2.t.getY() + mouseDeltaY * MOUSE_SPEED * TRACK_SPEED);
-//                    cameraXform.ry.setAngle(oldYAngle);
-//                    cameraXform.rx.setAngle(oldXAngle);
+
 
 
                 }

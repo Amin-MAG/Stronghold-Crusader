@@ -2,8 +2,11 @@ package Stronghold;
 
 import Stronghold.GameObjects.Building.*;
 import Stronghold.GameObjects.Building.Farm;
+import Stronghold.Map.Tile.Tile;
 import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;
+
+import java.util.Arrays;
 
 public class GameController implements EventHandler<MouseEvent> {
 
@@ -14,17 +17,34 @@ public class GameController implements EventHandler<MouseEvent> {
     public static Barracks newBarracks = null;
     public static Workshop newWorkshop = null;
     public String evenName;
+    public Tile thisEarth;
 
-    GameController(String name) {
+    public GameController(String name) {
 
         super();
         evenName = name;
 
     }
 
+    public GameController(String name, Tile tile) {
+
+        super();
+        evenName = name;
+        thisEarth = tile;
+
+    }
+
 
     @Override
     public void handle(MouseEvent event) {
+
+
+        if (evenName.equals("EARTH")) {
+
+            Game.mousePosOnEarth = new double[] {thisEarth.xform.getChildren().get(0).getTranslateX(), thisEarth.xform.getChildren().get(0).getTranslateZ()};
+            System.out.println(Arrays.toString(Game.mousePosOnEarth));
+
+        }
 
         if (evenName.equals("BARRACKS") && !GameController.buildingBarracksIsSelected) {
 
