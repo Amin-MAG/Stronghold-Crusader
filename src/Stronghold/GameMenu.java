@@ -3,19 +3,15 @@ package Stronghold;
 import javafx.scene.Group;
 import javafx.scene.input.MouseEvent;
 
-import javax.sound.sampled.LineEvent;
-import java.util.zip.GZIPOutputStream;
-
 public class GameMenu {
 
-    public Group constructionMenu = new Group();
+    public Group menuPage = new Group();
     public Group buildingBtn = new Group();
     public Group castleInfo = new Group();
     public Group farmInfo = new Group();
     public Group workshopInfo = new Group();
     public Group barracksInfo = new Group();
 
-    public Group upgrade = new Group();
 
     private MODES mode;
     public static enum MODES {
@@ -39,7 +35,7 @@ public class GameMenu {
         Group barracksButton = new Group();
         Group workshopButton = new Group();
 
-        Game.createRect(constructionMenu, 1925,282, -3, 801, "GAME-MENU");
+        Game.createRect(menuPage, 1925,282, -3, 801, "GAME-MENU");
         Game.createRect(farmButton, 170, 150, 500, 930, "BUILDING-FARM");
         Game.createRect(barracksButton, 250, 160, 680, 920, "BUILDING-BARRACKS");
         Game.createRect(workshopButton, 91, 84, 930, 940, "BUILDING-WORKSHOP");
@@ -55,6 +51,34 @@ public class GameMenu {
 
         // Castle Building
 
+        Group addVassal = new Group();
+        Game.createRect(addVassal, 75,60,850,1000,"GAME-MENU-ADD-VASSAL");
+
+        castleInfo.getChildren().add(getLevels(1));
+        castleInfo.getChildren().add(addVassal);
+
+
+        // Farm Building
+
+        farmInfo.getChildren().add(getLevels(3));
+
+
+        // Barracks
+
+        barracksInfo.getChildren().add(getLevels(2));
+
+        // Workshop
+
+        workshopInfo.getChildren().add(getLevels(5));
+
+        // Render !
+
+        render();
+
+    }
+
+    public Group getLevels(int n) {
+
         Group levels = new Group();
         Group level[] = new Group[]{
                 new Group(),
@@ -63,26 +87,23 @@ public class GameMenu {
                 new Group(),
                 new Group()
         };
-        Group addVassal = new Group();
+        Group upgrade = new Group();
 
-        Game.createRect(level[0],50,50,500 - 60, 1010,"GAME-MENU-LEVEL1-UPGRADED");
-        Game.createRect(level[1],50,50,555 - 60, 1010,"GAME-MENU-LEVEL2");
-        Game.createRect(level[2],50,50,610 - 60, 1010,"GAME-MENU-LEVEL3");
-        Game.createRect(level[3],50,50,665 - 60, 1010,"GAME-MENU-LEVEL4");
-        Game.createRect(level[4],50,50,720 - 60, 1010,"GAME-MENU-LEVEL5");
+        for (int i = 1; i < 6; i++) {
 
-        Game.createRect(upgrade,70,70,720, 1000,"GAME-MENU-UPGRADE");
-        Game.createRect(addVassal, 75,60,850,1000,"GAME-MENU-ADD-VASSAL");
+            String imageName = "GAME-MENU-LEVEL" + i;
+            if (i <= n) imageName += "-UPGRADED";
+            Game.createRect(level[i-1],50,50,440 + 55*(i-1), 1010,imageName);
+
+        }
+
+
+        if (n != 5) Game.createRect(upgrade,70,70,720, 1000,"GAME-MENU-UPGRADE");
 
         levels.getChildren().addAll(level);
         levels.getChildren().add(upgrade);
 
-        castleInfo.getChildren().add(levels);
-        castleInfo.getChildren().add(addVassal);
-
-        // Render !
-
-        render();
+        return levels;
 
     }
 
@@ -96,7 +117,7 @@ public class GameMenu {
 
     public void delete() {
 
-        constructionMenu.getChildren().remove(1);
+        menuPage.getChildren().remove(1);
 
     }
 
@@ -109,29 +130,35 @@ public class GameMenu {
 
             case MAIN:
 
-                constructionMenu.getChildren().add(buildingBtn);
+                menuPage.getChildren().add(buildingBtn);
 
                 break;
 
             case CASTLE:
 
-                constructionMenu.getChildren().add(castleInfo);
+                menuPage.getChildren().add(castleInfo);
                 break;
 
+            case FARM:
+
+                menuPage.getChildren().add(farmInfo);
+                break;
+
+            case BARRACKS:
+
+                menuPage.getChildren().add(barracksInfo);
+                break;
+
+            case WORKSHOP:
+
+                menuPage.getChildren().add(workshopInfo);
+                break;
+                
             default:
                 System.out.println("Default");
                 break;
 
         }
-
-
-
-    }
-
-    public static void main(String[] args) throws InterruptedException {
-
-        GameMenu amin = new GameMenu(MODES.MAIN);
-        amin.render();
 
     }
 

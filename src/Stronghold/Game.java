@@ -34,7 +34,7 @@ public class Game  {
     public ArrayList<Human> noneSoldjers;
     public ArrayList<GameAnimation> gameObjectAnimations = new ArrayList<>();
     public static boolean haveCastle = false;
-    public GameMenu gameMenu;
+    public static GameMenu gameMenu;
 
 
     // Main Objects
@@ -179,7 +179,7 @@ public class Game  {
         // Adding to Root Group
 
         root.getChildren().add(subScene);
-        root.getChildren().add(gameMenu.constructionMenu);
+        root.getChildren().add(gameMenu.menuPage);
 
 
         // Create Scene with group Root
@@ -356,6 +356,11 @@ public class Game  {
                 break;
             case "FARM":
                 Farm newFarm = new Farm(new int[]{x, y}, "Amin");
+                newFarm.xform.addEventHandler(MouseEvent.MOUSE_CLICKED, e -> {
+
+                    gameMenu.changeMode(GameMenu.MODES.FARM);
+
+                });
                 world.getChildren().addAll(newFarm.xform);
                 ArrayList<Building> farmList = new ArrayList<>();
                 if (myBuildings.get("FARM") == null) {
@@ -373,6 +378,11 @@ public class Game  {
                 break;
             case "WORKSHOP":
                 Workshop newWorkshop = new Workshop(new int[]{x, y}, "Amin");
+                newWorkshop.xform.addEventHandler(MouseEvent.MOUSE_CLICKED, e -> {
+
+                    gameMenu.changeMode(GameMenu.MODES.WORKSHOP);
+
+                });
                 world.getChildren().addAll(newWorkshop.xform);
                 ArrayList<Building> workshopList = new ArrayList<>();
                 if (myBuildings.get("WORKSHOP") == null) {
@@ -392,6 +402,11 @@ public class Game  {
                 if (myBuildings.get("BARRACKS") == null) {
 
                     Barracks newBarracks = new Barracks(new int[]{x, y}, "Amin");
+                    newBarracks.xform.addEventHandler(MouseEvent.MOUSE_CLICKED, e -> {
+
+                        gameMenu.changeMode(GameMenu.MODES.BARRACKS);
+
+                    });
                     world.getChildren().addAll(newBarracks.xform);
                     ArrayList<Building> barracksList = new ArrayList<>();
                     barracksList.add(newBarracks);
