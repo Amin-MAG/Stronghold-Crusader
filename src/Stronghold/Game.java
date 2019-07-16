@@ -34,6 +34,7 @@ public class Game  {
     public ArrayList<Human> noneSoldjers;
     public ArrayList<GameAnimation> gameObjectAnimations = new ArrayList<>();
     public static boolean haveCastle = false;
+    public GameMenu gameMenu;
 
 
     // Main Objects
@@ -116,7 +117,6 @@ public class Game  {
         myBuildings.put("BARRACKS", null);
         myBuildings.put("WORKSHOP", null);
 
-
         /*
             Make DELAY !
          */
@@ -151,45 +151,51 @@ public class Game  {
 
         // Game Menu
 
-        Group constructionMenu = new Group();
-        Group farmButton = new Group();
-        Group barracksButton = new Group();
-        Group workshopButton = new Group();
+        gameMenu = new GameMenu(GameMenu.MODES.MAIN);
 
-        createRect(constructionMenu, 1925,282, -3, 801, "GAME-MENU");
-        createRect(farmButton, 170, 150, 500, 930, "BUILDING-FARM");
-        createRect(barracksButton, 250, 160, 680, 920, "BUILDING-BARRACKS");
-        createRect(workshopButton, 91, 84, 930, 940, "BUILDING-WORKSHOP");
-
-        constructionMenu.getChildren().add(farmButton);
-        constructionMenu.getChildren().add(barracksButton);
-        constructionMenu.getChildren().add(workshopButton);
-
-        constructionMenu.getChildren().get(1).addEventHandler(MouseEvent.MOUSE_CLICKED, new GameController("FARM"));
-        constructionMenu.getChildren().get(2).addEventHandler(MouseEvent.MOUSE_CLICKED, new GameController("BARRACKS"));
-        constructionMenu.getChildren().get(3).addEventHandler(MouseEvent.MOUSE_CLICKED, new GameController("WORKSHOP"));
-
+//        Group constructionMenu = new Group();
+//        Group buildingBtn = new Group();
+//        Group farmButton = new Group();
+//        Group barracksButton = new Group();
+//        Group workshopButton = new Group();
+//
+//        createRect(constructionMenu, 1925,282, -3, 801, "GAME-MENU");
+//        createRect(farmButton, 170, 150, 500, 930, "BUILDING-FARM");
+//        createRect(barracksButton, 250, 160, 680, 920, "BUILDING-BARRACKS");
+//        createRect(workshopButton, 91, 84, 930, 940, "BUILDING-WORKSHOP");
+//
+//        buildingBtn.getChildren().add(farmButton);
+//        buildingBtn.getChildren().add(barracksButton);
+//        buildingBtn.getChildren().add(workshopButton);
+//
+//        System.out.println(constructionMenu.getChildren());
+//
+//        buildingBtn.getChildren().get(0).addEventHandler(MouseEvent.MOUSE_CLICKED, new GameController("FARM"));
+//        buildingBtn.getChildren().get(1).addEventHandler(MouseEvent.MOUSE_CLICKED, new GameController("BARRACKS"));
+//        buildingBtn.getChildren().get(2).addEventHandler(MouseEvent.MOUSE_CLICKED, new GameController("WORKSHOP"));
+//
+//        constructionMenu.getChildren().add(buildingBtn);
 
         // Adding to Root Group
 
         root.getChildren().add(subScene);
-        root.getChildren().add(constructionMenu);
+        root.getChildren().add(gameMenu.constructionMenu);
 
 
         // Create Scene with group Root
 
-        Scene gameMenu = new Scene(root, 1280, 182);
+        Scene gameMenuScene = new Scene(root, 1280, 182);
 
 
         // GameController
 
-        handleMouse(gameMenu, world);
+        handleMouse(gameMenuScene, world);
 
 
         // Scene Setting and Stage
 
         primaryStage.setTitle("Game");
-        primaryStage.setScene(gameMenu);
+        primaryStage.setScene(gameMenuScene);
         primaryStage.setFullScreen(true);
         primaryStage.show();
 
@@ -335,8 +341,10 @@ public class Game  {
                     Castle newCastle = new Castle(new int[]{x, y}, "Amin");
                     newCastle.xform.addEventFilter(MouseEvent.MOUSE_CLICKED, e -> {
 
-                        System.out.println("Castle Has Been Selected !");
-                        System.out.println(newCastle.xform.getChildren().get(0).getTranslateX() + " " + newCastle.xform.getChildren().get(0).getTranslateY() + " " + newCastle.xform.getChildren().get(0).getTranslateZ());
+//                        System.out.println("Castle Has Been Selected !");
+//                        System.out.println(newCastle.xform.getChildren().get(0).getTranslateX() + " " + newCastle.xform.getChildren().get(0).getTranslateY() + " " + newCastle.xform.getChildren().get(0).getTranslateZ());
+                        gameMenu.changeMode(GameMenu.MODES.CASTLE);
+
 
                     });
                     world.getChildren().addAll(newCastle.xform);
