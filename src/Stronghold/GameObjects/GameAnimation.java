@@ -11,7 +11,7 @@ public class GameAnimation {
 
     public int[] location;
     public final Xform xform = new Xform();
-    public int cycle = 13;
+    public int cycle;
     public double[] size;
     public String animationName;
     public String animationImage;
@@ -22,6 +22,8 @@ public class GameAnimation {
         Map objectInfo = (Map) ResourceManager.getJson("JSON-OBJECTS").get(animName);
 
         JSONArray sizeJsonArr = (JSONArray) objectInfo.get("size");
+
+        cycle = Integer.parseInt(objectInfo.get("cycle").toString());
 
         size = new double[] {
                 Double.parseDouble(sizeJsonArr.get(0).toString()),

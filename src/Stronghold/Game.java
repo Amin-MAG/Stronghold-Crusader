@@ -3,7 +3,7 @@ package Stronghold;
 import Stronghold.GameObjects.Building.*;
 import Stronghold.GameObjects.GameAnimation;
 import Stronghold.GameObjects.Human.*;
-import Stronghold.GameObjects.NaturalObject.Chestnut;
+import Stronghold.GameObjects.NaturalObject.*;
 import Stronghold.Gui.GameMenu;
 import Stronghold.Map.GameMap;
 
@@ -18,6 +18,7 @@ import javafx.scene.*;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.AudioClip;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.Box;
@@ -55,14 +56,14 @@ public class Game  {
 
     private static double CAMERA_INITIAL_DISTANCE = -2000;
     private static final double CAMERA_INITIAL_X_ANGLE = 55;
-//    private static final double CAMERA_INITIAL_X_ANGLE = 55;
+    //    private static final double CAMERA_INITIAL_X_ANGLE = 55;
     private static final double CAMERA_INITIAL_Y_ANGLE = 180;
     private static final double CAMERA_NEAR_CLIP = 0.5;
     private static final double CAMERA_FAR_CLIP = 10000.0;
 
     // Mouse
 
-//    private static final double CONTROL_MULTIPLIER = 0.1;
+    //    private static final double CONTROL_MULTIPLIER = 0.1;
 //    private static final double SHIFT_MULTIPLIER = 10.0;
 //    private static final double ROTATION_SPEED = 2.0;
     private static final double MOUSE_SPEED = 2;
@@ -102,7 +103,7 @@ public class Game  {
 
         // Map and First Resources
 
-        gameMap = new GameMap("MAP-SAMPLE");
+        gameMap = new GameMap(mapName);
 
         Map jsonMap = ResourceManager.getJson("JSON-GAME");
 
@@ -142,6 +143,11 @@ public class Game  {
     }
 
     public void render(Stage primaryStage) {
+
+        // GAME MUSIC
+        
+        startMusic();
+
 
         // Game Scene
 
@@ -246,7 +252,27 @@ public class Game  {
 
         // Animation
 
+
         addAnimation("TREE-CHESTNUT", 300,200);
+        addAnimation("TREE-CHESTNUT", 1000,250);
+        addAnimation("TREE-CHESTNUT", 1500,1200);
+        addAnimation("TREE-CHESTNUT", 300,200);
+        addAnimation("TREE-CHESTNUT", -1650,400);
+        addAnimation("TREE-CHESTNUT", -1150,900);
+        addAnimation("TREE-CHESTNUT", 490,75);
+        addAnimation("TREE-CHESTNUT", -450,0);
+        addAnimation("TREE-CHESTNUT", -900,651);
+        addAnimation("TREE-CHESTNUT", -1050,-350);
+        addAnimation("TREE-OAK",500, 500);
+        addAnimation("TREE-OAK",1400, 500);
+        addAnimation("TREE-OAK",-900, -1300);
+        addAnimation("TREE-OAK",1200, -1200);
+        addAnimation("TREE-OAK",-1450, 1225);
+        addAnimation("TREE-PINE",-500, -1000);
+        addAnimation("TREE-PINE",1060, -800);
+        addAnimation("TREE-PINE",1060, -800);
+        addAnimation("TREE-PINE",1010, -650);
+        addAnimation("TREE-PINE",600, 400);
 
         startObjectAnimation();
 
@@ -506,13 +532,34 @@ public class Game  {
         switch (animationName) {
 
             case "TREE-CHESTNUT":
+
                 Chestnut newChestnut = new Chestnut(new int[] {x, y});
                 gameObjectAnimations.add(newChestnut);
                 break;
+
+            case "TREE-OAK":
+
+                Oak newOak = new Oak(new int[] {x, y});
+                gameObjectAnimations.add(newOak);
+                break;
+
+            case "TREE-PINE":
+
+                Pine newPine = new Pine (new int[] {x, y});
+                gameObjectAnimations.add(newPine);
+                break;
+
             default:
                 break;
 
         }
+
+    }
+
+    public void startMusic() {
+
+//        AudioClip theMenuMusic = ResourceManager.getSound("GAME-MAIN-MUSIC1");
+//        theMenuMusic.play();
 
     }
 

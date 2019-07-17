@@ -29,7 +29,7 @@ public class GameGui extends Application {
 
         primaryStage.setAlwaysOnTop(true);
 
-        AudioClip theMenuMusic = ResourceManager.getSound("GUI-Music");
+        AudioClip theMenuMusic = ResourceManager.getSound("GUI-MUSIC");
 
         MainMenuButton btnCreateServer = new MainMenuButton("GUI-CREATE_SERVER");
         MainMenuButton btnJoin = new MainMenuButton("GUI-JOIN");
@@ -41,7 +41,7 @@ public class GameGui extends Application {
                     @Override
                     public void handle(MouseEvent event) {
 
-                        Game myGame = new Game("sample");
+                        Game myGame = new Game("MAP-AP");
                         theMenuMusic.stop();
                         myGame.render(primaryStage);
 
@@ -77,9 +77,9 @@ public class GameGui extends Application {
         mainBox.setBackground(ResourceManager.getBackground("GUI-BACKGROUND"));
 
 
-//        primaryStage.setFullScreenExitHint("");
-//        primaryStage.setFullScreen(true);
-//        primaryStage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH);
+        primaryStage.setFullScreenExitHint("");
+        primaryStage.setFullScreen(true);
+        primaryStage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH);
 
         primaryStage.fullScreenProperty().addListener(new ChangeListener<Boolean>() {
             @Override
@@ -92,26 +92,12 @@ public class GameGui extends Application {
         });
 
 
-//        new AnimationTimer() {
-//            @Override
-//            public void handle(long now) {
-//
-//                primaryStage.setFullScreen(true);
-//
-//            }
-//        }.start();
-
-
 //        theMenuMusic.play();
-//
-//        primaryStage.show();
 
 
+        new Game("MAP-AP").render(primaryStage);
 
-        // Should Be Removed
-
-        new Game("sample").render(primaryStage);
-        theMenuMusic.stop();
+        primaryStage.show();
 
     }
 

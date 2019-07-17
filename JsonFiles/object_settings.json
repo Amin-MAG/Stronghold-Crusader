@@ -3,5 +3,15 @@
     "size" : [185 , 185, 50],
 	"cycle" : 13,
     "animation_image" : "OBJECT-TREE-CHESTNUT"
+  },
+  "oak": {
+    "size" : [185 , 185, 50],
+    "cycle" : 13,
+    "animation_image" : "OBJECT-TREE-OAK"
+  },
+  "pine": {
+    "size" : [185 , 185, 50],
+    "cycle" : 13,
+    "animation_image" : "OBJECT-TREE-PINE"
   }
 }

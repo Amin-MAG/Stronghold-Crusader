@@ -138,7 +138,7 @@ public class GameMenu {
 
                 menuPage.getChildren().add(workshopInfo);
                 break;
-                
+
             default:
                 System.out.println("Default");
                 break;

@@ -2,7 +2,7 @@ package Stronghold.Map.Tile;
 
 public class SeaTile extends Tile {
 
-    SeaTile(int[] location) {
+    public SeaTile(int[] location) {
 
         super("TILE-SEA", false, location);
 

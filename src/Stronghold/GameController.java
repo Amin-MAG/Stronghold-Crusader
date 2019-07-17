@@ -7,6 +7,8 @@ import Stronghold.Map.Tile.Tile;
 import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;
 
+import java.util.Arrays;
+
 public class GameController implements EventHandler<MouseEvent> {
 
     public static boolean buildingFarmIsSelected = false;
@@ -47,7 +49,7 @@ public class GameController implements EventHandler<MouseEvent> {
 
             }
 //            thisEarth.xform.getChildren().get(0).setRotate(65);
-//            System.out.println(Arrays.toString(Game.mousePosOnEarth));
+            System.out.println(Arrays.toString(Game.mousePosOnEarth));
 
         }
 

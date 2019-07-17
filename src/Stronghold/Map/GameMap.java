@@ -4,9 +4,7 @@ import java.util.Map;
 
 import Stronghold.Game;
 import Stronghold.GameController;
-import Stronghold.Map.Tile.DesertTile;
-import Stronghold.Map.Tile.GrassTile;
-import Stronghold.Map.Tile.Tile;
+import Stronghold.Map.Tile.*;
 import Stronghold.ResourceManager;
 import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;
@@ -49,7 +47,8 @@ public class GameMap {
 
             1 DESERT
             2 GRASS
-
+            3 SEA
+            4 Gulf
 
          */
 
@@ -62,6 +61,13 @@ public class GameMap {
                     break;
                 case 2:
                     gameBoard[i+halfI][j+halfJ] = new GrassTile(new int[] {tileSize*i+tileSize/2, tileSize*j+tileSize/2});
+                    break;
+                case 3:
+                    gameBoard[i+halfI][j+halfJ] = new SeaTile(new int[] {tileSize*i+tileSize/2, tileSize*j+tileSize/2});
+                    break;
+                case 4:
+                    gameBoard[i+halfI][j+halfJ] = new GulfTile(new int[] {tileSize*i+tileSize/2, tileSize*j+tileSize/2});
+                    break;
                 default:
                     break;
 
