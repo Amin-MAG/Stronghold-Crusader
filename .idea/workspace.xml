@@ -6,10 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="ac4f78e8-03c2-4260-a12e-2e4d98e441e9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JsonFiles/Maps/sample.json" beforeDir="false" afterPath="$PROJECT_DIR$/JsonFiles/Maps/sample.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JsonFiles/building_settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/JsonFiles/building_settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JsonFiles/resource_settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/JsonFiles/resource_settings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/note.txt" beforeDir="false" afterPath="$PROJECT_DIR$/note.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Stronghold/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Stronghold/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Stronghold/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Stronghold/GameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Stronghold/GameMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Stronghold/GameMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Stronghold/ResourceManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Stronghold/ResourceManager.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -118,13 +122,13 @@
     <session id="749187908">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="22" />
+          <entry key="project.closed" value="23" />
           <entry key="project.open.time.0" value="4" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.10" value="4" />
           <entry key="project.open.time.11" value="3" />
           <entry key="project.open.time.12" value="7" />
-          <entry key="project.open.time.13" value="2" />
+          <entry key="project.open.time.13" value="3" />
           <entry key="project.open.time.14" value="3" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.17" value="1" />
@@ -134,7 +138,7 @@
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="2" />
           <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="40" />
+          <entry key="project.opened" value="41" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -143,10 +147,10 @@
           <entry key="class" value="1" />
           <entry key="html" value="2" />
           <entry key="iml" value="1" />
-          <entry key="java" value="225" />
+          <entry key="java" value="232" />
           <entry key="java___jb_old___" value="1" />
           <entry key="jpg" value="3" />
-          <entry key="json" value="48" />
+          <entry key="json" value="52" />
           <entry key="png" value="4" />
           <entry key="txt" value="3" />
         </counts>
@@ -157,8 +161,8 @@
           <entry key="HTML" value="2" />
           <entry key="IDEA_MODULE" value="1" />
           <entry key="Image" value="7" />
-          <entry key="JAVA" value="225" />
-          <entry key="JSON" value="48" />
+          <entry key="JAVA" value="232" />
+          <entry key="JSON" value="52" />
           <entry key="PLAIN_TEXT" value="5" />
         </counts>
       </usages-collector>
@@ -167,16 +171,16 @@
           <entry key="allowed_json_files" value="73" />
           <entry key="dummy" value="36" />
           <entry key="html" value="201" />
-          <entry key="java" value="44355" />
-          <entry key="json" value="1872" />
+          <entry key="java" value="45599" />
+          <entry key="json" value="2038" />
           <entry key="txt" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="201" />
-          <entry key="JAVA" value="44355" />
-          <entry key="JSON" value="1872" />
+          <entry key="JAVA" value="45599" />
+          <entry key="JSON" value="2038" />
           <entry key="PLAIN_TEXT" value="114" />
         </counts>
       </usages-collector>
@@ -187,33 +191,21 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Stronghold/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="36" column="17" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
+            <state relative-caret-position="179">
+              <caret line="28" column="10" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1563279183148" expanded="true" signature="4306:5480" ph="..." />
+                <marker date="1563339401557" expanded="true" signature="4312:5486" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Stronghold/GameController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="46" column="16" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Stronghold/GameMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="658">
-              <caret line="160" column="9" selection-start-line="160" selection-start-column="9" selection-end-line="160" selection-end-column="9" />
+            <state relative-caret-position="299">
+              <caret line="85" column="47" selection-start-line="85" selection-start-column="47" selection-end-line="85" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -222,19 +214,40 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/JsonFiles/building_settings.json">
+        <entry file="file://$PROJECT_DIR$/src/Stronghold/Gui/Text/ResourceText.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="79" column="15" selection-start-line="79" selection-start-column="15" selection-end-line="79" selection-end-column="15" />
+            <state relative-caret-position="114">
+              <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Stronghold/ResourceManager.java">
+        <entry file="file://$PROJECT_DIR$/JsonFiles/Maps/sample.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
-              <caret line="107" selection-start-line="107" selection-end-line="107" />
+            <state relative-caret-position="76">
+              <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/JsonFiles/game_settings.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Stronghold/GameController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-14">
+              <caret line="30" selection-start-line="30" selection-end-line="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -245,8 +258,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/JsonFiles/resource_settings.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="21" column="45" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
+            <state relative-caret-position="95">
+              <caret line="34" column="5" lean-forward="true" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -263,11 +276,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>axis</find>
-      <find>FARM</find>
-      <find>FULL</find>
-      <find>BUILD</find>
-      <find>AXES</find>
       <find>SYSTE</find>
       <find>rotate</find>
       <find>castle</find>
@@ -280,8 +288,6 @@
       <find>any</find>
       <find>createrect3d</find>
       <find>xpos</find>
-      <find>build</find>
-      <find>axe</find>
       <find>full</find>
       <find>gamemenu</find>
       <find>gameMenu.changeMode(GameMenu.MODES.CASTLE);</find>
@@ -291,8 +297,15 @@
       <find>farm</find>
       <find>constructionMenu</find>
       <find>works</find>
-      <find>print</find>
       <find>gameMen</find>
+      <find>print</find>
+      <find>axe</find>
+      <find>create</find>
+      <find>false</find>
+      <find>axes</find>
+      <find>build</find>
+      <find>resou</find>
+      <find>resources</find>
     </findStrings>
     <replaceStrings>
       <replace>intersects</replace>
@@ -306,7 +319,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Thread/IncrThread.java" />
         <option value="$PROJECT_DIR$/src/Thread/DThread.java" />
         <option value="$PROJECT_DIR$/src/Thread/Main.java" />
         <option value="$PROJECT_DIR$/src/Thread/Table.java" />
@@ -327,14 +339,12 @@
         <option value="$PROJECT_DIR$/src/Stronghold/Human/Human.java" />
         <option value="$PROJECT_DIR$/src/Stronghold/Human/Swordsman.java" />
         <option value="$PROJECT_DIR$/src/GameSettings.java" />
-        <option value="$PROJECT_DIR$/src/Stronghold/ResourceManager.java" />
         <option value="$PROJECT_DIR$/src/Stronghold/GameObjects/GameAnimation.java" />
         <option value="$PROJECT_DIR$/src/Stronghold/GameObjects/NaturalObject/Tree.java" />
         <option value="$PROJECT_DIR$/src/Stronghold/GameObjects/NaturalObject/Chestnut.java" />
         <option value="$PROJECT_DIR$/src/package.json" />
         <option value="$PROJECT_DIR$/src/ScreenTester/Main.java" />
         <option value="$PROJECT_DIR$/JsonFiles/object_settings.json" />
-        <option value="$PROJECT_DIR$/JsonFiles/building_settings.json" />
         <option value="$PROJECT_DIR$/src/Test/Test.java" />
         <option value="$PROJECT_DIR$/src/Test/JavaFxHelloWorld.java" />
         <option value="$PROJECT_DIR$/src/Test/MaterialExample.java" />
@@ -349,14 +359,17 @@
         <option value="$PROJECT_DIR$/src/Stronghold/GameObjects/Building/Building.java" />
         <option value="$PROJECT_DIR$/src/Stronghold/Xform.java" />
         <option value="$PROJECT_DIR$/src/Stronghold/Map/Tile/Tile.java" />
-        <option value="$PROJECT_DIR$/JsonFiles/Maps/sample.json" />
         <option value="$PROJECT_DIR$/src/Stronghold/Map/GameMap.java" />
-        <option value="$PROJECT_DIR$/JsonFiles/resource_settings.json" />
         <option value="$PROJECT_DIR$/src/Stronghold/util/util.java" />
         <option value="$PROJECT_DIR$/src/Stronghold/Util/util.java" />
-        <option value="$PROJECT_DIR$/src/Stronghold/GameMenu.java" />
-        <option value="$PROJECT_DIR$/src/Stronghold/Game.java" />
+        <option value="$PROJECT_DIR$/JsonFiles/building_settings.json" />
+        <option value="$PROJECT_DIR$/src/Stronghold/ResourceManager.java" />
         <option value="$PROJECT_DIR$/src/Stronghold/GameController.java" />
+        <option value="$PROJECT_DIR$/JsonFiles/Maps/sample.json" />
+        <option value="$PROJECT_DIR$/JsonFiles/resource_settings.json" />
+        <option value="$PROJECT_DIR$/src/Stronghold/Game.java" />
+        <option value="$PROJECT_DIR$/src/Stronghold/Gui/Text/ResourceText.java" />
+        <option value="$PROJECT_DIR$/src/Stronghold/GameMenu.java" />
       </list>
     </option>
   </component>
@@ -373,9 +386,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
+    <option name="x" value="533" />
+    <option name="y" value="229" />
     <option name="width" value="974" />
-    <option name="height" value="1087" />
+    <option name="height" value="874" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -383,6 +397,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -412,21 +428,26 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Stronghold" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Stronghold" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Stronghold" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Stronghold" type="462c0819:PsiDirectoryNode" />
+              <item name="Gui" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="AndroidView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/OMEN/Documents/IntellJ/Stronghold/src/Stronghold/MaterialExample.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563279258528" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Maktab" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563341397774" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Dijkstra-District-Math" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -592,18 +613,19 @@
       <workItem from="1563080644634" duration="16850000" />
       <workItem from="1563165303124" duration="20915000" />
       <workItem from="1563203016743" duration="5469000" />
-      <workItem from="1563251889941" duration="21852000" />
+      <workItem from="1563251889941" duration="26300000" />
+      <workItem from="1563335750407" duration="5333000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="397465000" />
+    <option name="totallyTimeSpent" value="407246000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17004265" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17377399" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -612,13 +634,13 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32848233" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.35550934" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.35862786" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3960499" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.27338877" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32328483" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32952183" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.28066528" />
@@ -634,7 +656,7 @@
       <window_info anchor="right" id="Database" order="9" weight="0.32995737" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29371002" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17377399" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -643,13 +665,13 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32848233" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33056134" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.35862786" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3960499" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.25259876" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32328483" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32952183" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.28066528" />
@@ -676,22 +698,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Assets/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/image004.jpg" />
-    <entry file="file://$PROJECT_DIR$/JsonFiles/allowed_json_files.json" />
-    <entry file="file://$PROJECT_DIR$/JsonFiles/game_settings.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Stronghold/Map/Tile/SeaTile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -884,13 +890,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Stronghold/Stronghold.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Stronghold/Game.java___jb_old___" />
     <entry file="file://$PROJECT_DIR$/src/Stronghold/GameObjects/Building/Building.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -906,20 +905,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Stronghold/Xform.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="134" column="20" selection-start-line="134" selection-start-column="20" selection-end-line="134" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JsonFiles/Maps/sample.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -940,34 +925,98 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JsonFiles/resource_settings.json">
+    <entry file="file://$PROJECT_DIR$/src/Stronghold/Util/util.java" />
+    <entry file="file://$PROJECT_DIR$/src/Stronghold/Xform.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="21" column="45" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
+        <state relative-caret-position="133">
+          <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Stronghold/Util/util.java">
+    <entry file="file://$PROJECT_DIR$/JsonFiles/building_settings.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="24" lean-forward="true" selection-start-column="24" selection-end-column="24" />
+        <state relative-caret-position="285">
+          <caret line="113" column="15" lean-forward="true" selection-start-line="113" selection-start-column="15" selection-end-line="113" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Stronghold/ResourceManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="743">
+          <caret line="134" column="4" selection-start-line="134" selection-start-column="4" selection-end-line="134" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JsonFiles/building_settings.json">
+    <entry file="file://$PROJECT_DIR$/src/Stronghold/Stronghold.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="79" column="15" selection-start-line="79" selection-start-column="15" selection-end-line="79" selection-end-column="15" />
+        <state relative-caret-position="76">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Stronghold/ResourceManager.java">
+    <entry file="file://$PROJECT_DIR$/JsonFiles/resource_settings.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="107" selection-start-line="107" selection-end-line="107" />
+        <state relative-caret-position="95">
+          <caret line="34" column="5" lean-forward="true" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JsonFiles/Maps/sample.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Stronghold/GameController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-14">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JsonFiles/game_settings.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_212/javafx-src.zip!/com/sun/javafx/event/EventHandlerManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="237" selection-start-line="237" selection-end-line="237" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_212/javafx-src.zip!/javafx/scene/text/Text.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="126" column="11" selection-start-line="126" selection-start-column="11" selection-end-line="126" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Stronghold/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="28" column="10" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1563339401557" expanded="true" signature="4312:5486" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Stronghold/Gui/Text/ResourceText.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -976,29 +1025,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Stronghold/GameMenu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="658">
-          <caret line="160" column="9" selection-start-line="160" selection-start-column="9" selection-end-line="160" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Stronghold/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="36" column="17" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1563279183148" expanded="true" signature="4306:5480" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Stronghold/GameController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="46" column="16" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
+        <state relative-caret-position="299">
+          <caret line="85" column="47" selection-start-line="85" selection-start-column="47" selection-end-line="85" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

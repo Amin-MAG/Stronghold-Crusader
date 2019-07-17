@@ -31,7 +31,8 @@
     "BUILDING-FARM": "\\Assets\\img\\buildings\\farm.png",
     "HUMAN-VASSAL-DOWN": "\\Assets\\img\\human\\vassal\\down.png",
     "HUMAN-SWORDSMAN-DOWN": "\\Assets\\img\\human\\swordsman\\down.png",
-    "HUMAN-WORKER-DOWN": "\\Assets\\img\\human\\worker\\down.png"
+    "HUMAN-WORKER-DOWN": "\\Assets\\img\\human\\worker\\down.png",
+    "OBJECT-FIRE-VASSAL": "\\Assets\\img\\objects\\vassal_fire.png"
   },
   "animations": {
     "OBJECT-TREE-CHESTNUT-0" : "\\Assets\\img\\objects\\tree\\0_0img0.png",

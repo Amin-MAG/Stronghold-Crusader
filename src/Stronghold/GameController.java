@@ -42,14 +42,13 @@ public class GameController implements EventHandler<MouseEvent> {
         if (evenName.equals("EARTH")) {
 
             Game.mousePosOnEarth = new double[] {thisEarth.xform.getChildren().get(0).getTranslateX(), thisEarth.xform.getChildren().get(0).getTranslateZ()};
-
             if (event.isPrimaryButtonDown()) {
 
                 Game.gameMenu.changeMode(GameMenu.MODES.MAIN);
 
             }
 //            thisEarth.xform.getChildren().get(0).setRotate(65);
-//            System.out.println(Arrays.toString(Game.mousePosOnEarth));
+            System.out.println(Arrays.toString(Game.mousePosOnEarth));
 
         }
 

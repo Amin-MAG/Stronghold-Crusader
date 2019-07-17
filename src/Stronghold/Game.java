@@ -26,7 +26,7 @@ import javafx.stage.Stage;
 public class Game  {
 
 
-    private Map resources;
+    public static Map resources;
     private Map resourceRate;
     public GameMap gameMap;
     public HashMap<String, ArrayList<Building>> myBuildings;
@@ -204,7 +204,7 @@ public class Game  {
 
         buildEarth();
 
-        buildAxes();
+//        buildAxes();
 
         buildCamera();
 
@@ -215,11 +215,15 @@ public class Game  {
 
         // Human
 
-        addHuman("VASSAL-DOWN", -700, 0);
+        double specificAngle = (Math.PI*2)/10;
+        for (int i = 10; i > -1; i--) {
+
+            addHuman("VASSAL-DOWN", (int) (-550 + 50 * Math.cos(specificAngle * i)), (int) (100 + 50 * Math.sin(specificAngle * i)));
+
+        }
+
         addHuman("SWORDSMAN-DOWN", 600, 600);
         addHuman("SWORDSMAN-DOWN", -500, 500);
-
-        world.getChildren().addAll(humanXfrom);
 
 
         // Building
@@ -236,7 +240,7 @@ public class Game  {
         buildBuilding("WORKSHOP", 0, 500);
         buildBuilding("BARRACKS", 0, 300);
         buildBuilding("FARM", 750, 0);
-        buildBuilding("CASTLE", -500, 0);
+        buildBuilding("CASTLE", -375, 75);
 
 
         // Animation
@@ -244,6 +248,12 @@ public class Game  {
         addAnimation("TREE-CHESTNUT", 300,200);
 
         startObjectAnimation();
+
+
+        // Add Human
+
+        world.getChildren().addAll(humanXfrom);
+
 
     }
 

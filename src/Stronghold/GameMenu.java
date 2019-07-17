@@ -1,7 +1,10 @@
 package Stronghold;
 
+import Stronghold.Gui.Text.ResourceText;
+
 import javafx.scene.Group;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Text;
 
 public class GameMenu {
 
@@ -11,6 +14,11 @@ public class GameMenu {
     public Group farmInfo = new Group();
     public Group workshopInfo = new Group();
     public Group barracksInfo = new Group();
+    public Group resourceBox = new Group();
+
+    public ResourceText woodText;
+    public ResourceText goldText;
+    public ResourceText foodText;
 
 
     private MODES mode;
@@ -71,6 +79,18 @@ public class GameMenu {
 
         workshopInfo.getChildren().add(getLevels(5));
 
+        // Initial TEXT Rendering
+
+        woodText = new ResourceText("wood",1190,972);
+        goldText = new ResourceText("gold",1180,1005);
+        foodText = new ResourceText("food",1170,1035);
+
+        resourceBox.getChildren().add(woodText);
+        resourceBox.getChildren().add(goldText);
+        resourceBox.getChildren().add(foodText);
+
+        menuPage.getChildren().add(resourceBox);
+
         // Render !
 
         render();
@@ -117,7 +137,7 @@ public class GameMenu {
 
     public void delete() {
 
-        menuPage.getChildren().remove(1);
+//        menuPage.getChildren().remove(1);
 
     }
 
@@ -130,7 +150,7 @@ public class GameMenu {
 
             case MAIN:
 
-                menuPage.getChildren().add(buildingBtn);
+//                menuPage.getChildren().add(buildingBtn);
 
                 break;
 
@@ -161,6 +181,13 @@ public class GameMenu {
         }
 
     }
+
+    public void updateResource() {
+
+
+
+    }
+
 
 
 }
