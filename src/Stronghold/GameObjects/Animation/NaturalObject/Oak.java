@@ -1,6 +1,6 @@
-package Stronghold.GameObjects.NaturalObject;
+package Stronghold.GameObjects.Animation.NaturalObject;
 
-import Stronghold.GameObjects.GameAnimation;
+import Stronghold.GameObjects.Animation.GameAnimation;
 
 public class Oak extends GameAnimation {
 

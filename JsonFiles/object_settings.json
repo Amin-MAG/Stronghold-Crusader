@@ -13,5 +13,45 @@
     "size" : [185 , 185, 50],
     "cycle" : 13,
     "animation_image" : "OBJECT-TREE-PINE"
+  },
+  "archer-right": {
+    "size" : [100 , 100, 50],
+    "cycle" : 8,
+    "animation_image" : "HUMAN-ARCHER-RIGHT"
+  },
+  "archer-down": {
+    "size" : [100 , 100, 50],
+    "cycle" : 8,
+    "animation_image" : "HUMAN-ARCHER-DOWN"
+  },
+  "archer-left": {
+    "size" : [100 , 100, 50],
+    "cycle" : 8,
+    "animation_image" : "HUMAN-ARCHER-LEFT"
+  },
+  "archer-up": {
+    "size" : [100 , 100, 50],
+    "cycle" : 8,
+    "animation_image" : "HUMAN-ARCHER-UP"
+  },
+  "swordsman-right": {
+    "size" : [30,60, 15],
+    "cycle" : 8,
+    "animation_image" : "HUMAN-SWORDSMAN-RIGHT"
+  },
+  "swordsman-down": {
+    "size" : [30,60, 15],
+    "cycle" : 8,
+    "animation_image" : "HUMAN-SWORDSMAN-DOWN"
+  },
+  "swordsman-left": {
+    "size" : [30,60, 15],
+    "cycle" : 8,
+    "animation_image" : "HUMAN-SWORDSMAN-LEFT"
+  },
+  "swordsman-up": {
+    "size" : [30,60, 15],
+    "cycle" : 8,
+    "animation_image" : "HUMAN-SWORDSMAN-UP"
   }
 }

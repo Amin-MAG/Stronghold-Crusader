@@ -1,8 +1,9 @@
-package Stronghold.GameObjects;
+package Stronghold.GameObjects.Animation;
 
 import Stronghold.Game;
 import Stronghold.ResourceManager;
 import Stronghold.Xform;
+import com.sun.org.apache.bcel.internal.generic.IF_ACMPEQ;
 import org.json.simple.JSONArray;
 
 import java.util.Map;
@@ -42,6 +43,30 @@ public class GameAnimation {
         xform.getChildren().clear();
         Game.createRect3D(xform, size[0],0, size[1], location[0], size[2], location[1],null,animationImage + "-" + (n%cycle),true);
 
+        try {
+            String pos = animationName.split("-")[1];
+
+
+            if (pos.equals("right")) {
+
+                location[0]++;
+
+            } else if (pos.equals("left")) {
+
+                location[0]--;
+
+            } else if (pos.equals("up")) {
+
+                location[1]--;
+
+            } else if (pos.equals("down")) {
+
+                location[1]++;
+
+            }
+
+
+        } catch (Exception e) {}
         return xform;
 
     }

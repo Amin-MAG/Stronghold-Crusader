@@ -1,9 +1,10 @@
 package Stronghold;
 
 import Stronghold.GameObjects.Building.*;
-import Stronghold.GameObjects.GameAnimation;
+import Stronghold.GameObjects.Animation.GameAnimation;
 import Stronghold.GameObjects.Human.*;
-import Stronghold.GameObjects.NaturalObject.*;
+import Stronghold.GameObjects.Animation.NaturalObject.*;
+import Stronghold.GameObjects.Animation.NaturalObject.ArcherAnim;
 import Stronghold.Gui.GameMenu;
 import Stronghold.Map.GameMap;
 
@@ -18,7 +19,6 @@ import javafx.scene.*;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
-import javafx.scene.media.AudioClip;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.Box;
@@ -253,6 +253,44 @@ public class Game  {
         // Animation
 
 
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+
+                addAnimation("SWORDSMAN-RIGHT", 400 + 35*i, 300 + 35*j);
+                addAnimation("ARCHER-RIGHT", 1000 + 35*i, 600 + 35*j);
+
+
+            }
+        }
+
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+
+                addAnimation("SWORDSMAN-LEFT", 400 + 35*i, 300 + 35*j);
+                addAnimation("ARCHER-LEFT", 1000 + 35*i, 600 + 35*j);
+
+            }
+        }
+
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+
+                addAnimation("SWORDSMAN-UP", 400 + 35*i, 300 + 35*j);
+                addAnimation("ARCHER-UP", 1000 + 35*i, 600 + 35*j);
+
+            }
+        }
+
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+
+                addAnimation("SWORDSMAN-DOWN", 400 + 35*i, 300 + 35*j);
+                addAnimation("ARCHER-DOWN", 1000 + 35*i, 600 + 35*j);
+
+            }
+        }
+
+
         addAnimation("TREE-CHESTNUT", 300,200);
         addAnimation("TREE-CHESTNUT", 1000,250);
         addAnimation("TREE-CHESTNUT", 1500,1200);
@@ -273,6 +311,7 @@ public class Game  {
         addAnimation("TREE-PINE",1060, -800);
         addAnimation("TREE-PINE",1010, -650);
         addAnimation("TREE-PINE",600, 400);
+
 
         startObjectAnimation();
 
@@ -529,6 +568,9 @@ public class Game  {
 
     public void addAnimation(String animationName, int x, int y) {
 
+
+        ArcherAnim newArcherAnim;
+
         switch (animationName) {
 
             case "TREE-CHESTNUT":
@@ -547,6 +589,59 @@ public class Game  {
 
                 Pine newPine = new Pine (new int[] {x, y});
                 gameObjectAnimations.add(newPine);
+                break;
+
+            case "ARCHER-RIGHT":
+
+                newArcherAnim = new ArcherAnim(new int[] {x, y}, "ARCHER-RIGHT".toLowerCase());
+                gameObjectAnimations.add(newArcherAnim);
+                break;
+
+            case "ARCHER-LEFT":
+
+                newArcherAnim = new ArcherAnim(new int[] {x, y}, "ARCHER-LEFT".toLowerCase());
+                gameObjectAnimations.add(newArcherAnim);
+                break;
+
+
+            case "ARCHER-UP":
+
+                newArcherAnim = new ArcherAnim(new int[] {x, y}, "ARCHER-UP".toLowerCase());
+                gameObjectAnimations.add(newArcherAnim);
+                break;
+
+
+            case "ARCHER-DOWN":
+
+                newArcherAnim = new ArcherAnim(new int[] {x, y}, "ARCHER-DOWN".toLowerCase());
+                gameObjectAnimations.add(newArcherAnim);
+                break;
+
+
+            case "SWORDSMAN-RIGHT":
+
+                newArcherAnim = new ArcherAnim(new int[] {x, y}, "SWORDSMAN-RIGHT".toLowerCase());
+                gameObjectAnimations.add(newArcherAnim);
+                break;
+
+            case "SWORDSMAN-LEFT":
+
+                newArcherAnim = new ArcherAnim(new int[] {x, y}, "SWORDSMAN-LEFT".toLowerCase());
+                gameObjectAnimations.add(newArcherAnim);
+                break;
+
+
+            case "SWORDSMAN-UP":
+
+                newArcherAnim = new ArcherAnim(new int[] {x, y}, "SWORDSMAN-UP".toLowerCase());
+                gameObjectAnimations.add(newArcherAnim);
+                break;
+
+
+            case "SWORDSMAN-DOWN":
+
+                newArcherAnim = new ArcherAnim(new int[] {x, y}, "SWORDSMAN-DOWN".toLowerCase());
+                gameObjectAnimations.add(newArcherAnim);
                 break;
 
             default:
