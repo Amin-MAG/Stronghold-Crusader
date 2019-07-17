@@ -24,6 +24,7 @@ public class ResourceText extends Text {
 
         String theValue = Game.resources.get(resource).toString();
         setText(theValue);
+        System.out.println(resource + " " + theValue);
 
         return theValue;
 

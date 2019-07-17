@@ -4,7 +4,10 @@ import Stronghold.Gui.Text.ResourceText;
 
 import javafx.scene.Group;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+
+import java.util.concurrent.ForkJoinPool;
 
 public class GameMenu {
 
@@ -81,9 +84,9 @@ public class GameMenu {
 
         // Initial TEXT Rendering
 
-        woodText = new ResourceText("wood",1190,972);
-        goldText = new ResourceText("gold",1180,1005);
-        foodText = new ResourceText("food",1170,1035);
+        woodText = new ResourceText("wood",1183,972);
+        goldText = new ResourceText("gold",1175,1005);
+        foodText = new ResourceText("food",1168,1035);
 
         resourceBox.getChildren().add(woodText);
         resourceBox.getChildren().add(goldText);
@@ -137,7 +140,13 @@ public class GameMenu {
 
     public void delete() {
 
-//        menuPage.getChildren().remove(1);
+        for (int i = 1; i < menuPage.getChildren().size(); i++) {
+
+            if ( menuPage.getChildren().get(i) != resourceBox ) menuPage.getChildren().remove(i);
+
+        }
+
+        System.out.println(menuPage.getChildren());
 
     }
 
@@ -150,7 +159,8 @@ public class GameMenu {
 
             case MAIN:
 
-//                menuPage.getChildren().add(buildingBtn);
+                menuPage.getChildren().add(buildingBtn);
+                System.out.println(menuPage.getChildren());
 
                 break;
 
@@ -184,7 +194,9 @@ public class GameMenu {
 
     public void updateResource() {
 
-
+        foodText.updateText();
+        woodText.updateText();
+        goldText.updateText();
 
     }
 

@@ -255,6 +255,9 @@ public class Game  {
         world.getChildren().addAll(humanXfrom);
 
 
+        startResourceReduction();
+
+
     }
 
 
@@ -536,6 +539,42 @@ public class Game  {
         }.start();
 
         earthGroup.getChildren().add(earthObjects);
+
+    }
+
+    public void startResourceReduction() {
+
+        new Thread() {
+            @Override
+            public void run() {
+
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+                while (true) {
+
+                    try {
+                        Thread.sleep(500);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+
+                    int food = Integer.parseInt(resources.get("food").toString()) + Integer.parseInt(resourceRate.get("food").toString());
+                    int wood = Integer.parseInt(resources.get("wood").toString()) + Integer.parseInt(resourceRate.get("wood").toString());
+                    int gold = Integer.parseInt(resources.get("gold").toString()) + Integer.parseInt(resourceRate.get("gold").toString());
+
+                    resources.put("food",food);
+                    resources.put("wood",wood);
+                    resources.put("gold",gold);
+
+                    gameMenu.updateResource();
+
+                }
+            }
+        }.start();
 
     }
 
