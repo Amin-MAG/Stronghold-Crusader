@@ -1,23 +1,23 @@
-package Stronghold;
+package Stronghold.Gui;
 
 import Stronghold.Gui.Text.ResourceText;
 
+import Stronghold.Game;
+import Stronghold.GameController;
+
 import javafx.scene.Group;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
-
-import java.util.concurrent.ForkJoinPool;
 
 public class GameMenu {
 
     public Group menuPage = new Group();
     public Group buildingBtn = new Group();
-    public Group castleInfo = new Group();
-    public Group farmInfo = new Group();
-    public Group workshopInfo = new Group();
-    public Group barracksInfo = new Group();
     public Group resourceBox = new Group();
+
+    public BuildingInfoPage castleInfo = new BuildingInfoPage("CASTLE");
+    public BuildingInfoPage farmInfo = new BuildingInfoPage("FARM");
+    public BuildingInfoPage workshopInfo = new BuildingInfoPage("WORKSHOP");
+    public BuildingInfoPage barracksInfo = new BuildingInfoPage("BARRACKS");
 
     public ResourceText woodText;
     public ResourceText goldText;
@@ -36,7 +36,7 @@ public class GameMenu {
     }
 
 
-    GameMenu(MODES mode) {
+    public GameMenu(MODES mode) {
 
         this.mode = mode;
 
@@ -60,27 +60,15 @@ public class GameMenu {
         buildingBtn.getChildren().get(2).addEventHandler(MouseEvent.MOUSE_CLICKED, new GameController("WORKSHOP"));
 
 
-        // Castle Building
+        // Building info Rendering
 
-        Group addVassal = new Group();
-        Game.createRect(addVassal, 75,60,850,1000,"GAME-MENU-ADD-VASSAL");
+        castleInfo.render();
 
-        castleInfo.getChildren().add(getLevels(1));
-        castleInfo.getChildren().add(addVassal);
+        farmInfo.render();
 
+        barracksInfo.render();
 
-        // Farm Building
-
-        farmInfo.getChildren().add(getLevels(3));
-
-
-        // Barracks
-
-        barracksInfo.getChildren().add(getLevels(2));
-
-        // Workshop
-
-        workshopInfo.getChildren().add(getLevels(5));
+        workshopInfo.render();
 
         // Initial TEXT Rendering
 
@@ -100,36 +88,6 @@ public class GameMenu {
 
     }
 
-    public Group getLevels(int n) {
-
-        Group levels = new Group();
-        Group level[] = new Group[]{
-                new Group(),
-                new Group(),
-                new Group(),
-                new Group(),
-                new Group()
-        };
-        Group upgrade = new Group();
-
-        for (int i = 1; i < 6; i++) {
-
-            String imageName = "GAME-MENU-LEVEL" + i;
-            if (i <= n) imageName += "-UPGRADED";
-            Game.createRect(level[i-1],50,50,440 + 55*(i-1), 1010,imageName);
-
-        }
-
-
-        if (n != 5) Game.createRect(upgrade,70,70,720, 1000,"GAME-MENU-UPGRADE");
-
-        levels.getChildren().addAll(level);
-        levels.getChildren().add(upgrade);
-
-        return levels;
-
-    }
-
     public void changeMode(MODES mode) {
 
         delete();
@@ -146,7 +104,6 @@ public class GameMenu {
 
         }
 
-        System.out.println(menuPage.getChildren());
 
     }
 
@@ -160,8 +117,6 @@ public class GameMenu {
             case MAIN:
 
                 menuPage.getChildren().add(buildingBtn);
-                System.out.println(menuPage.getChildren());
-
                 break;
 
             case CASTLE:

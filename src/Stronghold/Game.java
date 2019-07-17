@@ -4,6 +4,7 @@ import Stronghold.GameObjects.Building.*;
 import Stronghold.GameObjects.GameAnimation;
 import Stronghold.GameObjects.Human.*;
 import Stronghold.GameObjects.NaturalObject.Chestnut;
+import Stronghold.Gui.GameMenu;
 import Stronghold.Map.GameMap;
 
 import java.util.ArrayList;
@@ -228,15 +229,15 @@ public class Game  {
 
         // Building
 
-        buildBuilding("WORKSHOP", 0, 100);
-        buildBuilding("WORKSHOP", 0, -100);
-        buildBuilding("WORKSHOP", 100, 0);
-        buildBuilding("WORKSHOP", -100, 0);
-        buildBuilding("WORKSHOP", -100, -100);
-        buildBuilding("WORKSHOP", -100, 100);
-        buildBuilding("WORKSHOP", 100, -100);
-        buildBuilding("WORKSHOP", 100, 100);
-        buildBuilding("WORKSHOP", 600, 600);
+//        buildBuilding("WORKSHOP", 0, 100);
+//        buildBuilding("WORKSHOP", 0, -100);
+//        buildBuilding("WORKSHOP", 100, 0);
+//        buildBuilding("WORKSHOP", -100, 0);
+//        buildBuilding("WORKSHOP", -100, -100);
+//        buildBuilding("WORKSHOP", -100, 100);
+//        buildBuilding("WORKSHOP", 100, -100);
+//        buildBuilding("WORKSHOP", 100, 100);
+//        buildBuilding("WORKSHOP", 600, 600);
         buildBuilding("WORKSHOP", 0, 500);
         buildBuilding("BARRACKS", 0, 300);
         buildBuilding("FARM", 750, 0);
@@ -256,7 +257,7 @@ public class Game  {
 
 
         startResourceReduction();
-
+        System.out.println(myBuildings);
 
     }
 
@@ -548,6 +549,7 @@ public class Game  {
             @Override
             public void run() {
 
+
                 try {
                     Thread.sleep(2000);
                 } catch (InterruptedException e) {
@@ -557,18 +559,47 @@ public class Game  {
                 while (true) {
 
                     try {
-                        Thread.sleep(500);
+                        Thread.sleep(2000);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
 
-                    int food = Integer.parseInt(resources.get("food").toString()) + Integer.parseInt(resourceRate.get("food").toString());
-                    int wood = Integer.parseInt(resources.get("wood").toString()) + Integer.parseInt(resourceRate.get("wood").toString());
-                    int gold = Integer.parseInt(resources.get("gold").toString()) + Integer.parseInt(resourceRate.get("gold").toString());
+                    // Calculate Resource Rate
+
+
+                    Map jsonMap = ResourceManager.getJson("JSON-GAME");
+
+                    resourceRate = (Map) jsonMap.get("initial_resource_rate");
+
+                    int foodRate = Integer.parseInt(resourceRate.get("food").toString());
+                    int woodRate = Integer.parseInt(resourceRate.get("wood").toString());
+                    int goldRate = Integer.parseInt(resourceRate.get("gold").toString());
+
+                    for (ArrayList<Building> arr : myBuildings.values()) {
+
+                        for (Building building : arr) {
+
+                            foodRate += building.resourceRate.get("food");
+                            woodRate += building.resourceRate.get("wood");
+                            goldRate += building.resourceRate.get("gold");
+
+                        }
+
+                    }
+
+
+                    // Get and Set new Resource Value
+
+                    int food = Integer.parseInt(resources.get("food").toString()) + foodRate;
+                    int wood = Integer.parseInt(resources.get("wood").toString()) + woodRate;
+                    int gold = Integer.parseInt(resources.get("gold").toString()) + goldRate;
 
                     resources.put("food",food);
                     resources.put("wood",wood);
                     resources.put("gold",gold);
+
+
+                    // Update Text
 
                     gameMenu.updateResource();
 

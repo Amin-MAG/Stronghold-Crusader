@@ -2,11 +2,10 @@ package Stronghold;
 
 import Stronghold.GameObjects.Building.*;
 import Stronghold.GameObjects.Building.Farm;
+import Stronghold.Gui.GameMenu;
 import Stronghold.Map.Tile.Tile;
 import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;
-
-import java.util.Arrays;
 
 public class GameController implements EventHandler<MouseEvent> {
 
