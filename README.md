@@ -10,6 +10,6 @@ It is almost impossible to implement the whole game with JavaFX; we could not co
 
 <br>
 
-| <img src="https://s4.uupload.ir/files/menu_bdgx.jpg" width=1000px> |
+| <img src="./docs/images/menu.jpg" width=1000px> |
 |--|
-| <img src="https://s4.uupload.ir/files/game_nbiu.jpg" width=1000px> |
+| <img src="./docs/images/game.jpg" width=1000px> |
